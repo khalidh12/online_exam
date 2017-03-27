@@ -1,0 +1,2 @@
+module EcetHelper
+end

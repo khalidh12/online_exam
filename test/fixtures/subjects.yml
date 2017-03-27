@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eamcet: MyString
+  icet: MyString
+  pgcet: MyString
+  edcet: MyString
+  diploma: MyString
+
+two:
+  eamcet: MyString
+  icet: MyString
+  pgcet: MyString
+  edcet: MyString
+  diploma: MyString

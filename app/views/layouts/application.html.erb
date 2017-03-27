@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OnlineExam</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
+  <meta http-equiv="expires" content="Sat, 31 Oct 2014 00:00:00 GMT">
+  <meta http-equiv="pragma" content="no-cache">
+</head>
+<body>
+
+<% if user_signed_in? %>
+<%= render :partial => 'layouts/navbar' %>
+<% else %>
+<%= render :partial => 'layouts/navbar2' %>
+<%end%>
+<!-- <div class="container"> -->
+
+<%= yield %>
+<!-- <%= render :partial => 'layouts/footer' %> -->
+
+<!-- </div> -->
+
+
+
+
+
+
+<!-- <div class="container">
+ <footer class="footer">
+
+  <a href="https://www.facebook.com/khalidh.khalid" target="_blank">Khalidh</a>
+</footer>
+</div> -->
+</body>
+</html>
