@@ -19,7 +19,7 @@
 
  
  <% @questions.each do |q| %>
-
+<%= q.question%>
  <%= simple_form_for @submitque, :input_html => {:class => "form-horizontal"}, url: {action: "submitque", method: "post"} do |f| %> 
     <%= f.error_notification %>
 
@@ -29,11 +29,11 @@
     <%= f.submit "Next", :class => "btn btn-primary" %>
   <% end %>
 
-  <%=  @ids %>
-  
+
+  <% end %>
 </div>
 </div>
 		</div>
-
+ 
 
 </div>

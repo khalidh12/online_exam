@@ -22,9 +22,9 @@ class EamcetController < ApplicationController
 	  	@eamcet = Eamcet.new(eamcet_params)
 
 	     if @eamcet.save 
-	        redirect_to '/eamcetadd',  notice: 'Eamcet Question was successfully added'
+	        redirect_to '/eamcetform',  notice: 'Eamcet Question was successfully added'
 	    else
-	        redirect_to '/eamcetadd', alert: 'Something Wrong Please Check'
+	        redirect_to '/eamcetform', alert: 'Something Wrong Please Check'
 	    end
 	              
 	  end
