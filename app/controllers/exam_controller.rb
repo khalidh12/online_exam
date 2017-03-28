@@ -1,7 +1,7 @@
 class ExamController < ApplicationController
   def index
   	# @questions = Ecet.where(:subject =>"Mathematics")
-  	@questions = Ecet.all
+  	@questions = Ecet.paginate(:page => params[:page], :per_page => 1)
   	@submitque =Submitque.new
   end
 

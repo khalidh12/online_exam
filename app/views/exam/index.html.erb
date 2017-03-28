@@ -17,6 +17,7 @@
 	<div class="col-sm-4"></div>
 	<div class="col-sm-8">
 
+
  
  <% @questions.each do |q| %>
 <%= q.question%>
@@ -26,11 +27,12 @@
      <%= f.hidden_field :question, :value => q.id %>
      <input name="question" type="hidden" value=0>
      <%= f.input :answer, as: :radio_buttons, :required => true, :label => false, collection: [q.a, q.b,q.c,q.d], wrapper: :vertical_radio_and_checkboxes %>
-    <%= f.submit "Next", :class => "btn btn-primary" %>
+    <%= f.submit "submit", :class => "btn btn-primary" %>
   <% end %>
 
 
   <% end %>
+  <%= will_paginate @questions , :page_links => false, renderer: BootstrapPagination::Rails %>
 </div>
 </div>
 		</div>
