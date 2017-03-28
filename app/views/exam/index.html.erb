@@ -12,12 +12,13 @@
           <%= alert %>
         </div>
         <% end %>
-	<% @questions.each do |q|  %>
+
 	<div class="container">
 	<div class="col-sm-4"></div>
 	<div class="col-sm-8">
-  <p><%= q.question %></p>
-  <% @id = q.id %>
+
+ 
+ <% @questions.each do |q| %>
 
  <%= simple_form_for @submitque, :input_html => {:class => "form-horizontal"}, url: {action: "submitque", method: "post"} do |f| %> 
     <%= f.error_notification %>
@@ -27,10 +28,12 @@
      <%= f.input :answer, as: :radio_buttons, :required => true, :label => false, collection: [q.a, q.b,q.c,q.d], wrapper: :vertical_radio_and_checkboxes %>
     <%= f.submit "Next", :class => "btn btn-primary" %>
   <% end %>
+
+  <%=  @ids %>
   
 </div>
 </div>
 		</div>
-	<% end %>
+
 
 </div>
