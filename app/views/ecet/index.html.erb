@@ -1,6 +1,20 @@
 <div class="container">
-<a href="/ecetform/1">Test1</a><br>
-<a href="/ecetform/2">Test2</a><br>
-<a href="/ecetform">New Test</a>
+<div style="width:90%; height: 200px"><img src="/images/googleadwordslogo.jpg" width="90%" height="200px" ></div>
+<% i = 1 %>
+<table class="table table-bordered">
+	<tr>
+		<th>Test</th>
+		<th>Date</th>
+		<th></th>
+	</tr>
+<% @comptest.each do |c| %>
+	<tr>
+		<td>Exam-<%= i %></td>
+		<td><%= c.created_at %></td>
+		<td><a href="/exam/<%= i %>" >Start Exam </a></td>
+	<% i+=1 %>
+	
+<% end %>
 
+</table>
 </div>

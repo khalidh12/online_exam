@@ -1,9 +1,11 @@
 class EcetController < ApplicationController
+  before_action :authenticate_user!
   def index
     tc = params[:id]
   	@ecet = Ecet.new
     @subjects = Subject.all
     @cets = Cet.all
+    @comptest = Comptest.all
     @mc = Ecet.where(:subject => "Mathematics", :tc => tc)
     @pc = Ecet.where(:subject => "Physics", :tc => tc)
     @cc = Ecet.where(:subject => "Chemistry", :tc => tc)

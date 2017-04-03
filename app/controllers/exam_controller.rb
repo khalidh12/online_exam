@@ -1,4 +1,5 @@
 class ExamController < ApplicationController
+  before_action :authenticate_user!
   def index
   	# @questions = Ecet.where(:subject =>"Mathematics")
     tc = params[:id]
@@ -29,6 +30,10 @@ class ExamController < ApplicationController
   		else
   			redirect_to "/exam/#{tc}", alert: "error"
   		end
+  end
+
+  def ecetresult
+    @ecetresult = Submitque.where(:tc => params[:id])
   end
 
   def nextsubmit

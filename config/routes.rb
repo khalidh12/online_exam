@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   post '/submitque' => 'exam#submitque'
   get '/submitque' => 'exam#submitque'
+
+  get 'ecetresult/:id' => 'exam#ecetresult'
   # resources :quesions
 
   # resources :exams
@@ -39,7 +41,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
     root 'home#index'
     
-    devise_for :users
+    devise_for :users, :controllers => { :registrations => 'registrations'}
     devise_scope :user do
       get "/login", :to => 'devise/sessions#new'
       get '/logout', :to => 'devise/sessions#destroy' 

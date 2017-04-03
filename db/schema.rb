@@ -11,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330180735) do
+ActiveRecord::Schema.define(version: 20170403174444) do
 
   create_table "cets", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "state",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "comptests", force: :cascade do |t|
+    t.string   "subject",    limit: 255
+    t.string   "cet",        limit: 255
+    t.string   "comp",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -93,6 +101,8 @@ ActiveRecord::Schema.define(version: 20170330180735) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email",      limit: 255
+    t.string   "mobile",                 limit: 255
+    t.string   "district",               limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

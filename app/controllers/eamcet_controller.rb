@@ -1,5 +1,5 @@
 class EamcetController < ApplicationController
-
+before_action :authenticate_user!
   	def index
   		@eamcet = Eamcet.new
   	end
