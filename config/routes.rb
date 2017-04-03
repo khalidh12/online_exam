@@ -1,13 +1,21 @@
 Rails.application.routes.draw do
   
-  get '/ecetform' => 'ecet#index'
+  get '/ajs' => 'ajs#index'
+
+  get 'addtests/index'
+
+  get '/ecetform/:id' => 'ecet#ecetform'
+  get '/ecetform' => 'ecet#ecetform'
+  get '/ecet' => 'ecet#index'
   get '/eamcetform' => 'eamcet#index'
 
   post '/addeamcet' => 'eamcet#addeamcet'
   post '/addecet' => 'ecet#addecet'
 
-  get '/exam' => 'exam#index'
+  get '/exam/:id' => 'exam#index'
   get 'home/index'
+
+  get '/addtests' => 'addtests#index'
 
   get '/admin' => 'admin#index'
 

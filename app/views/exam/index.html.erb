@@ -1,4 +1,14 @@
-<div class="container-fluid">
+
+<!--  <script type="text/javascript">
+  function submit_by_tag() {
+var name = "k"
+var email = "k"
+
+alert(" Name : " + name + " \n Email : " + email + " \n Form Tag : <form>\n\n Form Submitted Successfully......");
+}
+ </script> -->
+
+ <div class="container-fluid">
 <div style="min-height:150px; min-width:100%"></div>
 <% if notice %>
         <div class="alert alert-success alert-dismissible" role="alert">
@@ -21,21 +31,28 @@
  
  <% @questions.each do |q| %>
 <%= q.question%>
- <%= simple_form_for @submitque, :input_html => {:class => "form-horizontal"}, url: {action: "submitque", method: "post"} do |f| %> 
+ <%= simple_form_for @submitque, :input_html => {:id => "form_id", :class => "form-horizontal"}, url: {action: "submitque", method: "post"} do |f| %> 
     <%= f.error_notification %>
 
      <%= f.hidden_field :question, :value => q.id %>
-     <input name="question" type="hidden" value=0>
+      <%= f.hidden_field :tc, :value => q.tc %>
      <%= f.input :answer, as: :radio_buttons, :required => true, :label => false, collection: [q.a, q.b,q.c,q.d], wrapper: :vertical_radio_and_checkboxes %>
-    <%= f.submit "submit", :class => "btn btn-primary" %>
+      <% disabled = Submitque.where(:userid => current_user, :question => q.id) %>
+         <% if disabled.empty? %>
+            <%= f.submit "submit", :class => "btn btn-primary"%>
+        <% else %>
+            <p class="btn btn-primary disabled">Submit</p>
+         <% end %>
+
+    
   <% end %>
 
-
   <% end %>
-  <%= will_paginate @questions , :page_links => false, renderer: BootstrapPagination::Rails %>
+
+  <%= will_paginate @questions, :previous_label => "Previous", :next_label => 'Next', :page_links => false, renderer: BootstrapPagination::Rails %>
 </div>
 </div>
 		</div>
- 
+
 
 </div>

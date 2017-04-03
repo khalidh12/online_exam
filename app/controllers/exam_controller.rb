@@ -1,7 +1,8 @@
 class ExamController < ApplicationController
   def index
   	# @questions = Ecet.where(:subject =>"Mathematics")
-  	@questions = Ecet.paginate(:page => params[:page], :per_page => 1)
+    tc = params[:id]
+  	@questions = Ecet.where(:tc => tc).paginate(:page => params[:page], :per_page => 1)
   	@submitque =Submitque.new
   end
 
@@ -22,10 +23,11 @@ class ExamController < ApplicationController
   	@submitque = Submitque.new
   	@submitque = Submitque.new(sub_params)
   	@submitque.userid = current_user.id
+    puts tc = sub_params['tc']
   		if @submitque.save
-  			redirect_to "/exam", notice: "Next Question"
+  			redirect_to "/exam/#{tc}", notice: "Next Question"
   		else
-  			redirect_to "/exam", alert: "error"
+  			redirect_to "/exam/#{tc}", alert: "error"
   		end
   end
 
@@ -36,6 +38,6 @@ class ExamController < ApplicationController
   private
 
   	def sub_params
-  		params.require(:submitque).permit(:question,:answer,:userid)
+  		params.require(:submitque).permit(:question,:answer,:userid,:tc)
   	end
 end
