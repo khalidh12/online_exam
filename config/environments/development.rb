@@ -31,12 +31,12 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: '54.175.177.74', port: 3000 }
 
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'localhost:3000',
+    domain:               'http://54.175.177.74',
     user_name:            'riseyuvaservices@gmail.com',
     password:             'aslamsaleem',
     authentication:       'plain',
