@@ -10,7 +10,7 @@
 
 
 
-<nav class="navbar navbar-default" style="background-color:white!important; border:none!important">
+<nav class="navbar navbar-default white-bg">
   <div class="container-fluid">
   <div class="col-md-4">
     <a href="/"> <img src="http://4.bp.blogspot.com/-Yp__6jsC768/WLqhUlOxbKI/AAAAAAAAGW8/88WLFB8tRko43XjthNQSDnzj8GwgNODSACK4B/s1600/SBTET%2BWORLD1.png" width="60%"></a>
@@ -23,8 +23,8 @@
 
 
     <ul class="nav navbar-nav navbar-right" id="mouseover">
-     <li>  <%= link_to('My Account', edit_user_registration_path) %></li>
-      <li><a href ="/logout">Logout </a> </li>
+     <li>  <%= link_to('My Account', edit_user_registration_path, :class => "glyphicon") %></li>
+     <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
      
     </ul>
   </div>
