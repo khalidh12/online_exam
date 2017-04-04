@@ -29,10 +29,17 @@ alert(" Name : " + name + " \n Email : " + email + " \n Form Tag : <form>\n\n Fo
   <div class="panel panel-default">
     <div class="panel-body"><%= q.question%></div>
   </div>
-<div style="width:90%; height: 100px"><img src="/images/googleadwordslogo.jpg" width="90%" height="100px" ></div>
+                    <div style="width:90%; height: 100px" class="text-center"><script ></script>
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block;width:728px;height:90px"
+                                 </ins>
+                            <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                    </div>
 <div class="panel panel-default">
           <div class="panel-body">
-          <div class="col-sm-8">
+          <div class="col-sm-4">
            <%= simple_form_for @submitque, :input_html => {:id => "form_id", :class => "form-horizontal"}, url: {action: "submitque", method: "post"} do |f| %> 
               <%= f.error_notification %>
 
@@ -49,15 +56,35 @@ alert(" Name : " + name + " \n Email : " + email + " \n Form Tag : <form>\n\n Fo
               
             <% end %>
            </div>
+           <div class="col-sm-4 text-center"><br><br>
+           <script ></script>
+              <!-- 200*90 LINKS -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:200px;height:90px"
+                   ></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+              </div>
             <div class="col-sm-4 text-center"><br><br><br>
                 <button class="btn btn-success">Finshed Exam</button>
             </div>
              </div>
   <% end %>
 </div>
+
+<div class="text-center">
   <%= will_paginate @questions, :previous_label => "Previous", :next_label => 'Next', :page_links => false, renderer: BootstrapPagination::Rails %>
+  </div>
 </div>
-<div style="width:90%; height: 100px"><img src="/images/googleadwordslogo.jpg" width="90%" height="100px" ></div>
+                    <div style="width:90%; height: 100px" class="text-center"><script ></script>
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block;width:728px;height:90px"
+                                 </ins>
+                            <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                    </div>
 </div>
 		</div>
 

@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   post '/addecet' => 'ecet#addecet'
 
   get '/exam/:id' => 'exam#index'
+
+  post '/ecetcompleted' => 'ecet#ecetcompleted'
+
   get 'home/index'
 
   get '/addtests' => 'addtests#index'

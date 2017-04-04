@@ -26,7 +26,7 @@ class ExamController < ApplicationController
   	@submitque.userid = current_user.id
     puts tc = sub_params['tc']
   		if @submitque.save
-  			redirect_to "/exam/#{tc}", notice: "Next Question"
+  			redirect_to "/exam/#{tc}?#{params[:page]}", notice: "Next Question"
   		else
   			redirect_to "/exam/#{tc}", alert: "error"
   		end

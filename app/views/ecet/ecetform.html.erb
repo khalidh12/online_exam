@@ -75,7 +75,18 @@
  <%= f.submit "submit", :class => "btn btn-primary" %>
  </div>
   <% end %>
-</div>
+
+  <div class="container">
+    <%= simple_form_for @ecetcompleted, url: {:action => "ecetcompleted",  :method => "post"} do |f| %>
+    <%= f.hidden_field :cet, :value => "ecet" %>
+    <div class="col-sm-4">
+   <%= f.input :tc, :placeholder => "Test Count", :label => false, :input_html => {:style => "width:100%;", :class => "form-control"} %>
+   <div class="text-center">
+ <%= f.submit "submit", :class => "btn btn-primary" %>
+ </div>
+  <% end %>
+      
+  </div>
 <br>
 <table class="table table-hover">
   <tr>

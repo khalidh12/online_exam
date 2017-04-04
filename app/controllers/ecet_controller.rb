@@ -5,7 +5,8 @@ class EcetController < ApplicationController
   	@ecet = Ecet.new
     @subjects = Subject.all
     @cets = Cet.all
-    @comptest = Comptest.all
+    @comptest = Comptest.where(:comp => "yes")
+    @ecetcompleted = Comptest.new
     @mc = Ecet.where(:subject => "Mathematics", :tc => tc)
     @pc = Ecet.where(:subject => "Physics", :tc => tc)
     @cc = Ecet.where(:subject => "Chemistry", :tc => tc)
@@ -18,7 +19,7 @@ class EcetController < ApplicationController
   end
 
   def ecetform
-
+     @ecetcompleted = Comptest.new
      tc = params[:id]
     @ecet = Ecet.new
     @subjects = Subject.all
@@ -41,20 +42,34 @@ class EcetController < ApplicationController
   	@ecet = Ecet.new
   	@ecet = Ecet.new(ecet_params)
 
-                  if @ecet.save 
-                      redirect_to "/ecetform/#{ecet_params['tc']}",  notice: 'Ecet Question was successfully added'
-
-                  else
-                        redirect_to '/ecetform', alert: 'Something Wrong Please Check'
-                        
-                    end
+        if @ecet.save 
+            redirect_to "/ecetform/#{ecet_params['tc']}",  notice: 'Ecet Question was successfully added'
+        else
+            redirect_to '/ecetform', alert: 'Something Wrong Please Check'
+        end
               
+  end
+
+  def ecetcompleted
+    @comptest = Comptest.new(ecetcompleted_params)
+    @comptest.comp = "yes"
+    puts ecetcompleted_params['tc']
+    if @comptest.save 
+      redirect_to "/ecetform/",  notice: 'Ecet TEST was successfully added'
+    else
+      redirect_to '/ecetform', alert: 'Something Wrong Please Check'
+    end
+
   end
 
   private
 
    def ecet_params
       	params.require(:ecet).permit(:subject,:question,:a,:b,:c,:d,:t,:tc,:cet)
+    end
+
+    def ecetcompleted_params
+        params.require(:comptest).permit(:cet,:com,:tc)
     end
 
 end

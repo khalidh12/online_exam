@@ -4,30 +4,38 @@
 <div class="row">
 <div class="col-sm-3"></div>
 <div class="col-sm-6">
-<table class="table table-bordered">
-	<tr>
-		<th class="success">Test</th>
-		<th class="success">Date</th>
-		<th class="success"></th>
-	</tr>
-	<!-- <% j = 1 %> -->
-	<% count = @comptest.count %>
-<% @comptest.each do |c| %>
-	<tr>
-		<td>Exam-<%= i %></td>
-		<td><%= c.created_at %></td>
-		<td><a href="/exam/<%= i %>" >Start Exam </a></td>
-	<!-- 	
-		<% if j == (count/2) %>
-			<div style="width:90%; height: 200px"><img src="/images/googleadwordslogo.jpg" width="90%" height="200px" ></div>
+<% if @comptest.empty? %>
+	<div class="alert alert-danger">
+      <strong>No Tests Added Yet</strong>
+    </div>
+		
+<% else %>
+		<table class="table table-bordered">
+			<tr>
+				<th class="success">Test</th>
+				<th class="success">Date</th>
+				<th class="success"></th>
+			</tr>
+			<!-- <% j = 1 %> -->
+			<% count = @comptest.count %>
+
+
+		<% @comptest.each do |c| %>
+			<tr>
+				<td>Exam-<%= i %></td>
+				<td><%= c.created_at %></td>
+				<td><a href="/exam/<%= i %>" >Start Exam </a></td>
+			<!-- 	
+				<% if j == (count/2) %>
+					<div style="width:90%; height: 200px"><img src="/images/googleadwordslogo.jpg" width="90%" height="200px" ></div>
+				<% end %>
+				<% j+= 1 %> -->
+
+			<% i+=1 %>
+			</tr>
 		<% end %>
-		<% j+= 1 %> -->
-
-	<% i+=1 %>
-	</tr>
+		</table>
 <% end %>
-
-</table>
 </div>
 </div>
 </div>
