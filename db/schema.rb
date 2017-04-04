@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404084013) do
+ActiveRecord::Schema.define(version: 20170404094921) do
 
   create_table "cets", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20170404084013) do
     t.string   "comp",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "tc",         limit: 255
+    t.string   "key",        limit: 255
   end
 
   create_table "eamcets", force: :cascade do |t|
