@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404094921) do
+ActiveRecord::Schema.define(version: 20170405063732) do
 
   create_table "cets", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20170404094921) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "tc",         limit: 255
+    t.integer  "pag",        limit: 4
   end
 
   create_table "testcounts", force: :cascade do |t|

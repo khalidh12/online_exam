@@ -44,6 +44,11 @@ alert(" Name : " + name + " \n Email : " + email + " \n Form Tag : <form>\n\n Fo
               <%= f.error_notification %>
 
                <%= f.hidden_field :question, :value => q.id %>
+               <% if @questions.current_page == @questions.count %>
+                <%= f.hidden_field :pag, :value => @questions.current_page %>
+                <% else %>
+                 <%= f.hidden_field :pag, :value => @questions.current_page+1 %>
+                 <% end %>
                 <%= f.hidden_field :tc, :value => q.tc %>
                <%= f.input :answer, as: :radio_buttons, :required => true, :label => false, collection: [q.a, q.b,q.c,q.d], wrapper: :vertical_radio_and_checkboxes %>
                 <% disabled = Submitque.where(:userid => current_user, :question => q.id) %>

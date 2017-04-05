@@ -25,10 +25,19 @@ class ExamController < ApplicationController
   	@submitque = Submitque.new(sub_params)
   	@submitque.userid = current_user.id
     puts tc = sub_params['tc']
+    puts pag = sub_params['pag']
+    @questions = Ecet.where(:tc => tc)
+    
   		if @submitque.save
-  			redirect_to "/exam/#{tc}?#{params[:page]}", notice: "Next Question"
+  			redirect_to "/exam/#{tc}?page=#{pag}", notice: "Question Submited"
   		else
-  			redirect_to "/exam/#{tc}", alert: "error"
+              if pag == @questions.count.to_s
+                 
+                 redirect_to "/exam/#{tc}?page=#{pag}", alert: "error"
+            
+              else
+                  redirect_to "/exam/#{tc}?page=#{pag}-1", alert: "error else"
+              end
   		end
   end
 
@@ -43,6 +52,6 @@ class ExamController < ApplicationController
   private
 
   	def sub_params
-  		params.require(:submitque).permit(:question,:answer,:userid,:tc)
+  		params.require(:submitque).permit(:question,:answer,:userid,:tc,:pag)
   	end
 end
