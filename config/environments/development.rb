@@ -40,8 +40,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    user_name:            'riseyuvaservices@gmail.com',
-    password:             'aslamsaleem',
+    user_name:            'khalidhmhd@gmail.com',
+    password:             '143myself',
     authentication:       'plain',
     enable_starttls_auto: true  }
   # Adds additional error checking when serving assets at runtime.
