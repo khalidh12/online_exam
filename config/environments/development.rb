@@ -33,7 +33,7 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
-  config.action_mailer.default_url_options = { host: '54.175.177.74' }
+  # config.action_mailer.default_url_options = { host: '54.175.177.74' }
 
   # config.assets.raise_runtime_errors = true
   config.action_mailer.delivery_method = :smtp
