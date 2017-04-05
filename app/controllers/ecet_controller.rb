@@ -1,38 +1,55 @@
 class EcetController < ApplicationController
   before_action :authenticate_user!
   def index
-    tc = params[:id]
-  	@ecet = Ecet.new
-    @subjects = Subject.all
-    @cets = Cet.all
-    @comptest = Comptest.where(:comp => "yes")
+    # tc = params[:id]
+    if params[:subject] = "cse"
+      @sub = "Computer Science and Engineering"
+      @subject ="cse"
+    elsif params[:subject] = "ece"
+      @sub = "Electronics & Communication"
+      @subject = "ece"
+    elsif params[:subject] = "eee"
+      @sub ="Electrical & Electronics"
+      @subject = "eee"
+    else
+      @subject = params[:subject]
+      @sub = params[:subject]
+    end
+
+  	# @ecet = Ecet.new
+    # @subjects = Subject.all
+    # @cets = Cet.all
+    @comptest = Comptest.where(:subject => @sub, :comp => "yes")
     @ecetcompleted = Comptest.new
-    @mc = Ecet.where(:subject => "Mathematics", :tc => tc)
-    @pc = Ecet.where(:subject => "Physics", :tc => tc)
-    @cc = Ecet.where(:subject => "Chemistry", :tc => tc)
-    @civc = Ecet.where(:subject => "Civil", :tc => tc)
-    @eec = Ecet.where(:subject => "Electrical & Electronics", :tc => tc)
-    @ecc = Ecet.where(:subject => "Electronics & Communication", :tc => tc)
-    @csc = Ecet.where(:subject => "Computer Science and Engineering", :tc => tc)
-    @mecc = Ecet.where(:subject => "Mechanical", :tc => tc)
+    # @mc = Ecet.where(:subject => "Mathematics", :tc => tc)
+    # @pc = Ecet.where(:subject => "Physics", :tc => tc)
+    # @cc = Ecet.where(:subject => "Chemistry", :tc => tc)
+    # @civc = Ecet.where(:subject => "Civil", :tc => tc)
+    # @eec = Ecet.where(:subject => "Electrical & Electronics", :tc => tc)
+    # @ecc = Ecet.where(:subject => "Electronics & Communication", :tc => tc)
+    # @csc = Ecet.where(:subject => "Computer Science and Engineering", :tc => tc)
+    # @mecc = Ecet.where(:subject => "Mechanical", :tc => tc)
 
   end
 
   def ecetform
-     @ecetcompleted = Comptest.new
-     tc = params[:id]
-    @ecet = Ecet.new
-    @subjects = Subject.all
-    @cets = Cet.all
-    @mc = Ecet.where(:subject => "Mathematics", :tc => tc)
-    @pc = Ecet.where(:subject => "Physics", :tc => tc)
-    @cc = Ecet.where(:subject => "Chemistry", :tc => tc)
-    @civc = Ecet.where(:subject => "Civil", :tc => tc)
-    @eec = Ecet.where(:subject => "Electrical & Electronics", :tc => tc)
-    @ecc = Ecet.where(:subject => "Electronics & Communication", :tc => tc)
-    @csc = Ecet.where(:subject => "Computer Science and Engineering", :tc => tc)
-    @mecc = Ecet.where(:subject => "Mechanical", :tc => tc)
-    
+    if current_user.role == "admin"
+         @ecetcompleted = Comptest.new
+         tc = params[:id]
+        @ecet = Ecet.new
+        @subjects = Subject.all
+        @cets = Cet.all
+        @mc = Ecet.where(:subject => "Mathematics", :tc => tc)
+        @pc = Ecet.where(:subject => "Physics", :tc => tc)
+        @cc = Ecet.where(:subject => "Chemistry", :tc => tc)
+        @civc = Ecet.where(:subject => "Civil", :tc => tc)
+        @eec = Ecet.where(:subject => "Electrical & Electronics", :tc => tc)
+        @ecc = Ecet.where(:subject => "Electronics & Communication", :tc => tc)
+        @csc = Ecet.where(:subject => "Computer Science and Engineering", :tc => tc)
+        @mecc = Ecet.where(:subject => "Mechanical", :tc => tc)
+    else
+      redirect_to "/"
+    end
 
   end
 
@@ -60,6 +77,9 @@ class EcetController < ApplicationController
       redirect_to '/ecetform', alert: 'Something Wrong Please Check'
     end
 
+  end
+
+  def subjects
   end
 
   private

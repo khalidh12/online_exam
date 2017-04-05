@@ -44,6 +44,7 @@ alert(" Name : " + name + " \n Email : " + email + " \n Form Tag : <form>\n\n Fo
               <%= f.error_notification %>
 
                <%= f.hidden_field :question, :value => q.id %>
+               <%= f.hidden_field :subject, :value => @subject %>
                <% if @questions.current_page == @questions.count %>
                 <%= f.hidden_field :pag, :value => @questions.current_page %>
                 <% else %>
@@ -72,7 +73,7 @@ alert(" Name : " + name + " \n Email : " + email + " \n Form Tag : <form>\n\n Fo
               </script>
               </div>
             <div class="col-sm-4 text-center"><br><br><br>
-                <button class="btn btn-success">Finshed Exam</button>
+                <a href="/ecetresults/<%= q.tc %>" > <button class="btn btn-success">Finshed Exam</button></a>
             </div>
              </div>
   <% end %>

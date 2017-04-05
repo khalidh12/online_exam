@@ -1,0 +1,52 @@
+<style type="text/css">
+	table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+</style>
+<% i = 1 %>
+<div class="container">
+	<table class="table table-bordered">
+		<tr class="text-center">
+			<th>Question</th>
+			<th>Your Answer</th>
+			<th>True Answer</th>
+		</tr>
+		<% ad=@ecetresults.count/4 %>
+		<% ad2=@ecetresults.count/4 %>
+			<% @ecetresults.each do |r| %>
+			
+			<% @question = Ecet.find_by_id(r.question) %>
+				<% if r.answer == @question.t %>
+					<% color = "success" %>
+				<% else %>
+					<% color ="danger" %>
+				<% end %>
+				
+				<tr>
+					<td class=<%= color%> ><%= @question.question %></td>
+					<td class=<%= color%> ><%= r.answer %></td>
+					<td class=<%= color%> ><%= @question.t %></td>
+				</tr>
+
+				<% if i == ad %>
+				<% ad+=ad2 %>
+				<tr class="text-center">
+				<td colspan="3"
+					 <script ></script>
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block;width:728px;height:90px"
+                                 </ins>
+                            <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                   </td> 
+                   
+                </tr>
+                <% end %>
+
+
+				<% i+=1 %>
+			<% end %>
+	</table>
+</div>

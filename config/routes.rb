@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
   
+  get 'results/index'
+
   get '/ajs' => 'ajs#index'
 
   get 'addtests/index'
 
   get '/ecetform/:id' => 'ecet#ecetform'
   get '/ecetform' => 'ecet#ecetform'
-  get '/ecet' => 'ecet#index'
+  get '/ecet/:subject' => 'ecet#index'
+   get '/ecetsubjects' => 'ecet#subjects'
   get '/eamcetform' => 'eamcet#index'
 
   post '/addeamcet' => 'eamcet#addeamcet'
   post '/addecet' => 'ecet#addecet'
 
-  get '/exam/:id' => 'exam#index'
+  get '/exam/:id/:subject' => 'exam#index'
 
   post '/ecetcompleted' => 'ecet#ecetcompleted'
 
@@ -32,7 +35,7 @@ Rails.application.routes.draw do
   post '/submitque' => 'exam#submitque'
   get '/submitque' => 'exam#submitque'
 
-  get 'ecetresult/:id' => 'exam#ecetresult'
+  get 'ecetresults/:id' => 'exam#ecetresults'
   # resources :quesions
 
   # resources :exams

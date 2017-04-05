@@ -3,7 +3,9 @@ class ExamController < ApplicationController
   def index
   	# @questions = Ecet.where(:subject =>"Mathematics")
     tc = params[:id]
-  	@questions = Ecet.where(:tc => tc).paginate(:page => params[:page], :per_page => 1)
+    @subject = params[:subject]
+    @questions = Ecet.where(:tc => tc, :subject => ['Mathematics', 'Physics', 'Chemistry' ,params[:subject]]).paginate(:page => params[:page], :per_page => 1)
+  	# @questions = Ecet.where(:tc => tc).paginate(:page => params[:page], :per_page => 1)
   	@submitque =Submitque.new
   end
 
@@ -24,26 +26,29 @@ class ExamController < ApplicationController
   	@submitque = Submitque.new
   	@submitque = Submitque.new(sub_params)
   	@submitque.userid = current_user.id
-    puts tc = sub_params['tc']
-    puts pag = sub_params['pag']
+    tc = sub_params['tc']
+    pag = sub_params['pag']
     @questions = Ecet.where(:tc => tc)
     
   		if @submitque.save
-  			redirect_to "/exam/#{tc}?page=#{pag}", notice: "Question Submited"
+  			redirect_to "/exam/#{tc}/#{sub_params['subject']}?page=#{pag}", notice: "Question Submited"
   		else
               if pag == @questions.count.to_s
                  
-                 redirect_to "/exam/#{tc}?page=#{pag}", alert: "error"
+                 redirect_to "/exam/#{tc}/#{sub_params['subject']}?page=#{pag}", alert: "error"
             
               else
-                  redirect_to "/exam/#{tc}?page=#{pag}-1", alert: "error else"
+                  redirect_to "/exam/#{tc}/#{sub_params['subject']}?page=#{pag}-1", alert: "error else"
               end
   		end
   end
 
-  def ecetresult
-    @ecetresult = Submitque.where(:tc => params[:id])
+  def ecetresults
+    tc = params[:id]
+    @ecetresults = Submitque.where(:tc => tc, :userid => current_user)
+    @questions = Ecet.where(:tc => tc)
   end
+
 
   def nextsubmit
     @nextsubmit = @questions.find_by(:id)
@@ -52,6 +57,6 @@ class ExamController < ApplicationController
   private
 
   	def sub_params
-  		params.require(:submitque).permit(:question,:answer,:userid,:tc,:pag)
+  		params.require(:submitque).permit(:question,:answer,:userid,:tc,:pag,:subject)
   	end
 end

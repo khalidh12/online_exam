@@ -17,6 +17,8 @@
 				<th class="success"></th>
 			</tr>
 			<!-- <% j = 1 %> -->
+			<% ad=@comptest.count/4 %>
+			<% ad2=@comptest.count/4 %>
 			<% count = @comptest.count %>
 
 
@@ -24,16 +26,27 @@
 			<tr>
 				<td>Exam-<%= i %></td>
 				<td><%= c.created_at %></td>
-				<td><a href="/exam/<%= i %>" >Start Exam </a></td>
-			<!-- 	
-				<% if j == (count/2) %>
-					<div style="width:90%; height: 200px"><img src="/images/googleadwordslogo.jpg" width="90%" height="200px" ></div>
-				<% end %>
-				<% j+= 1 %> -->
+				<td><a href="/exam/<%= i %>/<%= @subject %>" >Start Exam </a></td>
+			
+			</tr>
+			<% if i == ad %>
+				<% ad+=ad2 %>
+				<tr class="text-center">
+				<td colspan="3"
+					 <script ></script>
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block;width:728px;height:90px"
+                                 </ins>
+                            <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                   </td> 
+                   
+                </tr>
+                <% end %>
 
 			<% i+=1 %>
-			</tr>
-		<% end %>
+	<% end %>
 		</table>
 <% end %>
 </div>
