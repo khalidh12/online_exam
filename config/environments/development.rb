@@ -33,17 +33,19 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
-  config.action_mailer.default_url_options = { host: 'http://54.175.177.74' }
+  config.action_mailer.default_url_options = { host: '54.175.177.74' }
 
+  # config.assets.raise_runtime_errors = true
   config.action_mailer.delivery_method = :smtp
-
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
+    domain:               'localhost:3000',
     user_name:            'khalidhmhd@gmail.com',
-    password:             '143myself',
+    password:             '143zaheen',
     authentication:       'plain',
     enable_starttls_auto: true  }
+  
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
