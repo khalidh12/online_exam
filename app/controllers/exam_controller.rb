@@ -2,13 +2,13 @@ class ExamController < ApplicationController
   before_action :authenticate_user!
   def index
   	# @questions = Ecet.where(:subject =>"Mathematics")
-    if params[:subject] = "cse"
+    if params[:subject] == "cse"
       @sub = "Computer Science and Engineering"
       @subject ="cse"
-    elsif params[:subject] = "ece"
+    elsif params[:subject] == "ece"
       @sub = "Electronics & Communication"
       @subject = "ece"
-    elsif params[:subject] = "eee"
+    elsif params[:subject] == "eee"
       @sub ="Electrical & Electronics"
       @subject = "eee"
     else

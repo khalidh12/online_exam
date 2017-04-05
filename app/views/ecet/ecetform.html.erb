@@ -77,9 +77,13 @@
   <% end %>
 
   <div class="container">
+
     <%= simple_form_for @ecetcompleted, url: {:action => "ecetcompleted",  :method => "post"} do |f| %>
     <%= f.hidden_field :cet, :value => "ecet" %>
-    <div class="col-sm-4">
+     <div class="col-sm-8">
+     <div class="col-sm-4">
+   <%= f.input :subject, :required => true, :collection => ['Mathematics','Physics','Chemistry','Civil', 'Electrical & Electronics', 'Mechanical', 'Electronics & Communication', 'Computer Science and Engineering'], :label => false, :input_html => {:style => "width:100%;", :class => "form-control"}, :prompt => "Select Subject" %><br>
+   
    <%= f.input :tc, :placeholder => "Test Count", :label => false, :input_html => {:style => "width:100%;", :class => "form-control"} %>
    <div class="text-center">
  <%= f.submit "submit", :class => "btn btn-primary" %>

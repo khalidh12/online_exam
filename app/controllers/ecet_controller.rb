@@ -2,19 +2,21 @@ class EcetController < ApplicationController
   before_action :authenticate_user!
   def index
     # tc = params[:id]
-    if params[:subject] = "cse"
+    if params[:subject] == "cse"
       @sub = "Computer Science and Engineering"
       @subject ="cse"
-    elsif params[:subject] = "ece"
+    elsif params[:subject] == "ece"
       @sub = "Electronics & Communication"
       @subject = "ece"
-    elsif params[:subject] = "eee"
+    elsif params[:subject] == "eee"
       @sub ="Electrical & Electronics"
       @subject = "eee"
     else
       @subject = params[:subject]
       @sub = params[:subject]
     end
+
+    puts @sub
 
   	# @ecet = Ecet.new
     # @subjects = Subject.all
@@ -89,7 +91,7 @@ class EcetController < ApplicationController
     end
 
     def ecetcompleted_params
-        params.require(:comptest).permit(:cet,:com,:tc)
+        params.require(:comptest).permit(:cet,:com,:tc,:subject)
     end
 
 end
