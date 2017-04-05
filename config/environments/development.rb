@@ -43,7 +43,7 @@ Rails.application.configure do
     port:                 587,
     domain:               'gmail.com',
     user_name:            'khalidhmhd@gmail.com',
-    password:             '143myself',
+    password:             '143zaheen',
     authentication:       'plain',
     enable_starttls_auto: true  }
   # Adds additional error checking when serving assets at runtime.
