@@ -33,7 +33,7 @@ class EcetController < ApplicationController
   end
 
   def ecetform
-    if current_user.role == "admin"
+    # if current_user.role == "admin"
          @ecetcompleted = Comptest.new
          tc = params[:id]
         @ecet = Ecet.new
@@ -47,9 +47,9 @@ class EcetController < ApplicationController
         @ecc = Ecet.where(:subject => "Electronics & Communication", :tc => tc)
         @csc = Ecet.where(:subject => "Computer Science and Engineering", :tc => tc)
         @mecc = Ecet.where(:subject => "Mechanical", :tc => tc)
-    else
-      redirect_to "/"
-    end
+    # else
+    #   redirect_to "/"
+    # end
 
   end
 

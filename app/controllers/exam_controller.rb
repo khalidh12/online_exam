@@ -2,9 +2,23 @@ class ExamController < ApplicationController
   before_action :authenticate_user!
   def index
   	# @questions = Ecet.where(:subject =>"Mathematics")
+    if params[:subject] = "cse"
+      @sub = "Computer Science and Engineering"
+      @subject ="cse"
+    elsif params[:subject] = "ece"
+      @sub = "Electronics & Communication"
+      @subject = "ece"
+    elsif params[:subject] = "eee"
+      @sub ="Electrical & Electronics"
+      @subject = "eee"
+    else
+      @subject = params[:subject]
+      @sub = params[:subject]
+    end
+
     tc = params[:id]
-    @subject = params[:subject]
-    @questions = Ecet.where(:tc => tc, :subject => ['Mathematics', 'Physics', 'Chemistry' ,params[:subject]]).paginate(:page => params[:page], :per_page => 1)
+    # @subject = params[:subject]
+    @questions = Ecet.where(:tc => tc, :subject => ['Mathematics', 'Physics', 'Chemistry' ,@sub]).paginate(:page => params[:page], :per_page => 1)
   	# @questions = Ecet.where(:tc => tc).paginate(:page => params[:page], :per_page => 1)
   	@submitque =Submitque.new
   end
@@ -45,8 +59,9 @@ class ExamController < ApplicationController
 
   def ecetresults
     tc = params[:id]
-    @ecetresults = Submitque.where(:tc => tc, :userid => current_user)
-    @questions = Ecet.where(:tc => tc)
+    subject = params[:subject]
+    @ecetresults = Submitque.where(:tc => tc, :userid => current_user, :subject => ['Mathematics', 'Physics', 'Chemistry' ,params[:subject]])
+    @questions = Ecet.where(:tc => tc, :subject => ['Mathematics', 'Physics', 'Chemistry' ,params[:subject]])
   end
 
 

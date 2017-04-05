@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   post '/submitque' => 'exam#submitque'
   get '/submitque' => 'exam#submitque'
 
-  get 'ecetresults/:id' => 'exam#ecetresults'
+  get 'ecetresults/:id/:subject' => 'exam#ecetresults'
   # resources :quesions
 
   # resources :exams
