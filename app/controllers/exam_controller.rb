@@ -60,8 +60,8 @@ class ExamController < ApplicationController
   def ecetresults
     tc = params[:id]
     subject = params[:subject]
-    @ecetresults = Submitque.where(:tc => tc, :userid => current_user, :subject => ['Mathematics', 'Physics', 'Chemistry' ,params[:subject]])
-    @questions = Ecet.where(:tc => tc, :subject => ['Mathematics', 'Physics', 'Chemistry' ,params[:subject]])
+    @ecetresults = Submitque.where(:tc => tc, :userid => current_user, :subject => params[:subject])
+    # @questions = Ecet.where(:tc => tc, :subject => ['Mathematics', 'Physics', 'Chemistry', params[:subject]])
   end
 
 

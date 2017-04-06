@@ -52,7 +52,7 @@ alert(" Name : " + name + " \n Email : " + email + " \n Form Tag : <form>\n\n Fo
                  <% end %>
                 <%= f.hidden_field :tc, :value => q.tc %>
                <%= f.input :answer, as: :radio_buttons, :required => true, :label => false, collection: [q.a, q.b,q.c,q.d], wrapper: :vertical_radio_and_checkboxes %>
-                <% disabled = Submitque.where(:userid => current_user, :question => q.id) %>
+                <% disabled = Submitque.where(:userid => current_user, :question => q.id, :subject => @subject) %>
                    <% if disabled.empty? %>
                       <%= f.submit "submit", :class => "btn btn-primary"%>
                   <% else %>

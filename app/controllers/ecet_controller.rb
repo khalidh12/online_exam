@@ -22,7 +22,7 @@ class EcetController < ApplicationController
     # @subjects = Subject.all
     # @cets = Cet.all
     @comptest = Comptest.where(:subject => @sub, :comp => "yes")
-    @ecetcompleted = Comptest.new
+    # @ecetcompleted = Comptest.new
     # @mc = Ecet.where(:subject => "Mathematics", :tc => tc)
     # @pc = Ecet.where(:subject => "Physics", :tc => tc)
     # @cc = Ecet.where(:subject => "Chemistry", :tc => tc)
@@ -57,7 +57,7 @@ class EcetController < ApplicationController
 
    def addecet
     @testcount = Ecet.where(:tc => ecet_params['tc'])
-    puts @testcount.all
+    # puts @testcount.all
   	@ecet = Ecet.new
   	@ecet = Ecet.new(ecet_params)
 
@@ -91,7 +91,7 @@ class EcetController < ApplicationController
     end
 
     def ecetcompleted_params
-        params.require(:comptest).permit(:cet,:com,:tc,:subject)
+        params.require(:comptest).permit(:cet,:tc,:subject)
     end
 
 end

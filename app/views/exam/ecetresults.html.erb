@@ -5,6 +5,7 @@
 }
 </style>
 <% i = 1 %>
+<% j = 0 %>
 <div class="container">
 	<table class="table table-bordered">
 		<tr class="text-center">
@@ -12,21 +13,22 @@
 			<th>Your Answer</th>
 			<th>True Answer</th>
 		</tr>
-		<% ad=@ecetresults.count/4 %>
-		<% ad2=@ecetresults.count/4 %>
+		<% ad=@ecetresults.count/3 %>
+		<% ad2=@ecetresults.count/3 %>
 			<% @ecetresults.each do |r| %>
 			
 			<% @question = Ecet.find_by_id(r.question) %>
 				<% if r.answer == @question.t %>
-					<% color = "success" %>
+					<% color = "lightgreen" %>
+					<% j+= 1 %>
 				<% else %>
-					<% color ="danger" %>
+					<% color ="#f27171" %>
 				<% end %>
 				
 				<tr>
-					<td class=<%= color%> ><%= @question.question %></td>
-					<td class=<%= color%> ><%= r.answer %></td>
-					<td class=<%= color%> ><%= @question.t %></td>
+					<td ><%= @question.question %></td>
+					<td style="background-color:<%= color%>"><%= r.answer %></td>
+					<td><%= @question.t %></td>
 				</tr>
 
 				<% if i == ad %>
@@ -49,4 +51,11 @@
 				<% i+=1 %>
 			<% end %>
 	</table>
+
+	<div class="row text-center">
+		<div class="col-md-6">
+		Total Questions Attempt = <%= @ecetresults.count %>
+		Your Correct Answer = <%= j %>
+		</div>
+	</div>
 </div>
