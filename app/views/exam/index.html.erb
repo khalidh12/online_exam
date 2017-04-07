@@ -1,44 +1,43 @@
-
-<!--  <script type="text/javascript">
-  function submit_by_tag() {
-var name = "k"
-var email = "k"
-
-alert(" Name : " + name + " \n Email : " + email + " \n Form Tag : <form>\n\n Form Submitted Successfully......");
-}
- </script> -->
-
- <div class="container-fluid">
-<% if notice %>
-        <div class="alert alert-success alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <%= notice %>
-        </div>
-        <% end %>
-        <% if alert %>
-        <div class="alert alert-warning alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <%= alert %>
-        </div>
-        <% end %>
-</div>
+ <div class="container">
+          <% if notice %>
+                  <div class="alert alert-success alert-dismissible" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <%= notice %>
+                  </div>
+                  <% end %>
+                  <% if alert %>
+                  <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <%= alert %>
+                  </div>
+                  <% end %>
 <br>
-	<div class="container">
-	<div class="col-sm-12">
+       <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- 728*90 -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:728px;height:90px"
+                   data-ad-client="ca-pub-4211720830189288"
+                   data-ad-slot="9899296254"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+          </div>  
+         <div class="col-sm-2"></div>
+        </div>
+
+
+
 <% @questions.each do |q| %>
   <div class="panel panel-default">
     <div class="panel-body"><%= q.question%></div>
   </div>
-                    <div style="width:90%; height: 100px" class="text-center"><script ></script>
-                            <ins class="adsbygoogle"
-                                 style="display:inline-block;width:728px;height:90px"
-                                 </ins>
-                            <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                    </div>
-<div class="panel panel-default">
+                
+    <div class="panel panel-default">
           <div class="panel-body">
+          <div class="row">     
           <div class="col-sm-4">
            <%= simple_form_for @submitque, :input_html => {:id => "form_id", :class => "form-horizontal"}, url: {action: "submitque", method: "post"} do |f| %> 
               <%= f.error_notification %>
@@ -60,17 +59,19 @@ alert(" Name : " + name + " \n Email : " + email + " \n Form Tag : <form>\n\n Fo
                    <% end %>
 
               
-            <% end %>
+           
            </div>
-           <div class="col-sm-4 text-center"><br><br>
-           <script ></script>
-              <!-- 200*90 LINKS -->
-              <ins class="adsbygoogle"
-                   style="display:inline-block;width:200px;height:90px"
-                   ></ins>
-              <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
+            <% end %>
+           <div class="col-sm-4 text-center">
+                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- 300 x 250 Medium Rectangle -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:250px"
+                     data-ad-client="ca-pub-4211720830189288"
+                     data-ad-slot="5665491055"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
               </div>
             <div class="col-sm-4 text-center"><br><br><br>
                 <a href="/ecetresults/<%= q.tc %>/<%= @subject %>" > <button class="btn btn-success">Finshed Exam</button></a>
@@ -78,21 +79,19 @@ alert(" Name : " + name + " \n Email : " + email + " \n Form Tag : <form>\n\n Fo
              </div>
   <% end %>
 </div>
+</div>
 
 <div class="text-center">
   <%= will_paginate @questions, :previous_label => "Previous", :next_label => 'Next', :page_links => false, renderer: BootstrapPagination::Rails %>
   </div>
-</div>
-                    <div style="width:90%; height: 100px" class="text-center"><script ></script>
-                            <ins class="adsbygoogle"
-                                 style="display:inline-block;width:728px;height:90px"
-                                 </ins>
-                            <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                    </div>
-</div>
-		</div>
 
-
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- 728*90 -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:728px;height:90px"
+                   data-ad-client="ca-pub-4211720830189288"
+                   data-ad-slot="9899296254"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
 </div>

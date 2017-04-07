@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 gem 'simple_form'
+gem 'bootstrap-sass', '~> 3.3.0'
 
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
