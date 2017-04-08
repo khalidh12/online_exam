@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+   <%= javascript_include_tag 'application' %>
   
 </head>
 <body class="gray-bg  pace-done">
@@ -21,13 +23,16 @@
 <%= yield %>
 
 <br><br><br>
-<footer class="text-center footer navbar-fixed-bottom">
+
+<%= render :partial => 'layouts/footer' %>
+          
+<!-- <footer class="text-center footer navbar-fixed-bottom">
   <a href="https://www.linkedin.com/in/khalidh-sd-96284239/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:30px"></i></a>&nbsp;&nbsp;&nbsp;
 
   <a href="https://www.facebook.com/khalidh.khalid" target="_blank"><i class="fa fa-facebook-square" style="font-size:30px"></i></a>&nbsp;&nbsp;&nbsp;
 
   <a href="https://plus.google.com/u/0/107659702751121090928" target="_blank"><i class="fa fa-google-plus-square" style="font-size:30px"></i></a>
-</footer>
+</footer> -->
 
 </body>
 </html>

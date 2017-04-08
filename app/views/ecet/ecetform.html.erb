@@ -10,8 +10,8 @@
       <div class="col-sm-12">
         <h4 class="page-title">Add Ecet Questions</h4>
         <ol class="breadcrumb">
-          <li><a href="/">Home</a></li>
-          <li><a href="/ecet">Ecet</a></li>
+          <li><b><a href="/">Home</a></b></li>
+          <li><b><a href="/ecet">Ecet</a></b></li>
           <li class="active">Add Questions</li>
         </ol>
         <% if notice %>
@@ -33,6 +33,7 @@
 
 <div class="container">
 <div class="row">
+<br>
   <% @cets = Cet.all%>
  
 
@@ -41,7 +42,7 @@
                     <div class="row">
                     <div class="col-sm-8">
                       <div class="col-sm-4">
-                          <%= f.hidden_field :cet, :value => "ecet" %><h4> <b>ECET</b></h4>
+                          <%= f.hidden_field :cet, :value => "ecet" %><h2> <b>ECET FORM</b></h2>
                        </div>
                     <div class="col-sm-4">
                        <%= f.input :subject, :required => true, :collection => ['Mathematics','Physics','Chemistry','Civil', 'Electrical & Electronics', 'Mechanical', 'Electronics & Communication', 'Computer Science and Engineering'], :label => false, :input_html => {:style => "width:100%;", :class => "form-control"}, :prompt => "Select Subject" %><br>

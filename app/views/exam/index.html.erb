@@ -15,21 +15,22 @@
        <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-              <!-- 728*90 -->
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- school9edu_main_Blog1_1x1_as -->
               <ins class="adsbygoogle"
-                   style="display:inline-block;width:728px;height:90px"
-                   data-ad-client="ca-pub-4211720830189288"
-                   data-ad-slot="9899296254"></ins>
+                   style="display:block"
+                   data-ad-client="ca-pub-7665698555914778"
+                   data-ad-slot="9074553645"
+                   data-ad-format="auto"></ins>
               <script>
               (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
-          </div>  
+              </div>
          <div class="col-sm-2"></div>
         </div>
 
 
-
+<br>
 <% @questions.each do |q| %>
   <div class="panel panel-default">
     <div class="panel-body"><%= q.question%></div>
@@ -83,8 +84,8 @@
 </div>
 </div>
 
-<div class="text-center">
-  <%= will_paginate @questions, :previous_label => "Previous", :next_label => 'Next', :page_links => true, renderer: BootstrapPagination::Rails %>
+<div class="text-center flickr_pagination">
+  <%= will_paginate @questions, :class => "flickr_pagination", :previous_label => "Previous", :next_label => 'Next', :page_links => true, renderer: BootstrapPagination::Rails %>
   </div>
       <div class="text-center">
               <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
