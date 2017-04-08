@@ -38,7 +38,7 @@
     <div class="panel panel-default">
           <div class="panel-body">
           <div class="row">     
-          <div class="col-sm-4">
+          <div class="col-sm-3">
            <%= simple_form_for @submitque, :input_html => {:id => "form_id", :class => "form-horizontal"}, url: {action: "submitque", method: "post"} do |f| %> 
               <%= f.error_notification %>
 
@@ -62,19 +62,21 @@
            
            </div>
             <% end %>
-           <div class="col-sm-4 text-center">
+           <div class="col-sm-5 text-center">
+           <br>
                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- 300 x 250 Medium Rectangle -->
-                <ins class="adsbygoogle"
-                     style="display:inline-block;width:300px;height:250px"
-                     data-ad-client="ca-pub-4211720830189288"
-                     data-ad-slot="5665491055"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                    <!-- Responsive Links -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-7665698555914778"
+                         data-ad-slot="8409268847"
+                         data-ad-format="link"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
               </div>
             <div class="col-sm-4 text-center"><br><br><br>
-                <a href="/ecetresults/<%= q.tc %>/<%= @subject %>" > <button class="btn btn-success">Finshed Exam</button></a>
+                <a href="/ecetresults/<%= q.tc %>/<%= @subject %>" > <button class="btn btn-danger">Finshed Exam</button></a>
             </div>
              </div>
   <% end %>
@@ -82,9 +84,9 @@
 </div>
 
 <div class="text-center">
-  <%= will_paginate @questions, :previous_label => "Previous", :next_label => 'Next', :page_links => false, renderer: BootstrapPagination::Rails %>
+  <%= will_paginate @questions, :previous_label => "Previous", :next_label => 'Next', :page_links => true, renderer: BootstrapPagination::Rails %>
   </div>
-
+      <div class="text-center">
               <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
               <!-- 728*90 -->
               <ins class="adsbygoogle"
@@ -94,4 +96,5 @@
               <script>
               (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
+      </div>
 </div>
