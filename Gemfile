@@ -34,6 +34,8 @@ gem 'will_paginate-bootstrap'
 gem 'kaminari'
 gem 'passenger', '~> 5.0', '>= 5.0.30'
 
+gem "recaptcha", require: "recaptcha/rails"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

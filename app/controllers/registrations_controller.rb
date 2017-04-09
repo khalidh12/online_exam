@@ -12,7 +12,7 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(sign_up_params)
     
-    if @user.valid?
+  if verify_recaptcha(model: @user) && @user.valid?
     @user.role = "user"
       @user.save
       flash[:notice] = "Success"
@@ -20,7 +20,7 @@ class RegistrationsController < Devise::RegistrationsController
       # redirect_to emailnotification_url(@user), status: :found
       # redirect_to :controller => 'emailnotification'
     else
-      flash[:notice] = "Error"
+      flash[:notice] = "Please check your inputs"
       render :new
     end
   end
