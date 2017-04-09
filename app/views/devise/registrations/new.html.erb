@@ -70,13 +70,10 @@
     <%= f.label :district %><br />
     <%= f.text_field :district, required: true %>
   </div>
+   
 <br>
-  <div class="actions">
-
-    <%= f.submit "Sign up", :class => "btn btn-primary m-b" %>
-  </div>
-<% end %>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<%= recaptcha_tags %>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- school9edu_main_Blog1_1x1_as -->
 <ins class="adsbygoogle"
      style="display:block"
@@ -87,8 +84,15 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
+  <div class="actions">
 
-   <%= recaptcha_tags %>   
+    <%= f.submit "Sign up", :class => "btn btn-primary m-b" %>
+  </div>
+<% end %>
+
+
+
+     
 
 <%= render "devise/shared/links" %>
 </div>
