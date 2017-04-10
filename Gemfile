@@ -35,6 +35,7 @@ gem 'kaminari'
 gem 'passenger', '~> 5.0', '>= 5.0.30'
 
 gem "recaptcha", require: "recaptcha/rails"
+gem 'carrierwave', '~> 1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

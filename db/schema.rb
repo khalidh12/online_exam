@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405183226) do
+ActiveRecord::Schema.define(version: 20170410104354) do
 
   create_table "cets", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170405183226) do
     t.datetime "updated_at",               null: false
     t.string   "cet",        limit: 255
     t.string   "comman",     limit: 255
+    t.string   "qimage",     limit: 255
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(version: 20170405183226) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email",      limit: 255
+    t.string   "state",                  limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

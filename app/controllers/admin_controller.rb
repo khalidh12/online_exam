@@ -1,5 +1,14 @@
 class AdminController < ApplicationController
+ before_action :authenticate_user!
+
+if current_user.role == "admin"
   def index
-  	@cets = Cet.all
+  	users = User.all
+  	@users = users.count
+  	comptests = Comptest.all
+  	@comptests = comptests.count
   end
+else
+	redirect_to "/"
+end
 end

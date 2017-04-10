@@ -21,7 +21,7 @@
         </div>
         <% end %>
         <% if alert %>
-        <div class="alert alert-warning alert-dismissible" role="alert">
+        <div class="alert alert-danger alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <%= alert %>
         </div>
@@ -41,12 +41,15 @@
                     
                     <div class="row">
                     <div class="col-sm-8">
-                      <div class="col-sm-4">
+                      <div class="col-sm-6">
                           <%= f.hidden_field :cet, :value => "ecet" %><h2> <b>ECET FORM</b></h2>
                        </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                        <%= f.input :subject, :required => true, :collection => ['Mathematics','Physics','Chemistry','Civil', 'Electrical & Electronics', 'Mechanical', 'Electronics & Communication', 'Computer Science and Engineering'], :label => false, :input_html => {:style => "width:100%;", :class => "form-control"}, :prompt => "Select Subject" %><br>
                     </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <%= f.file_field :qimage %>
                     </div>
                     </div>
                    

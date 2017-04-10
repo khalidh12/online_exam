@@ -1,5 +1,7 @@
 class EcetController < ApplicationController
   before_action :authenticate_user!
+  require 'carrierwave/orm/activerecord'
+
   def index
     # tc = params[:id]
     if params[:subject] == "cse"
@@ -61,10 +63,10 @@ class EcetController < ApplicationController
   	@ecet = Ecet.new
   	@ecet = Ecet.new(ecet_params)
 
-        if @ecet.save 
+        if @ecet.save
             redirect_to "/ecetform/#{ecet_params['tc']}",  notice: 'Ecet Question was successfully added'
         else
-            redirect_to '/ecetform', alert: 'Something Wrong Please Check'
+            redirect_to "/ecetform/#{ecet_params['tc']}", alert: "Something Wrong Please Check Input Feilds, Image allow only 'jpg jpeg gif png' "
         end
               
   end
@@ -76,7 +78,7 @@ class EcetController < ApplicationController
     if @comptest.save 
       redirect_to "/ecetform/",  notice: 'Ecet TEST was successfully added'
     else
-      redirect_to '/ecetform', alert: 'Something Wrong Please Check'
+      redirect_to '/ecetform', alert: 'Something Wrong Please Check Input Fields'
     end
 
   end
@@ -87,7 +89,7 @@ class EcetController < ApplicationController
   private
 
    def ecet_params
-      	params.require(:ecet).permit(:subject,:question,:a,:b,:c,:d,:t,:tc,:cet)
+      	params.require(:ecet).permit(:subject,:question,:a,:b,:c,:d,:t,:tc,:cet,:qimage)
     end
 
     def ecetcompleted_params
