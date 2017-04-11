@@ -89,7 +89,7 @@ class EcetController < ApplicationController
   private
 
    def ecet_params
-      	params.require(:ecet).permit(:subject,:question,:a,:b,:c,:d,:t,:tc,:cet,:qimage)
+      	params.require(:ecet).permit(:subject,:question,:a,:b,:c,:d,:t,:tc,:cet,:qimage,:optiona,:optionb,:optionc,:optiond,:comman)
     end
 
     def ecetcompleted_params

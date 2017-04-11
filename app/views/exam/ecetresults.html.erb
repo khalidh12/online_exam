@@ -31,6 +31,28 @@
 			<% @ecetresults.each do |r| %>
 			
 			<% @question = Ecet.find_by_id(r.question) %>
+
+					<%if r.answer == "a"%>
+						<% an = @question.a%>
+					<%elsif r.answer == "b"%>
+						<% an = @question.b %>
+					<%elsif r.answer == "c"%>
+						<% an = @question.c %>
+					<%elsif r.answer == "d"%>
+						<% an = @question.d%>
+					<% end %>
+
+					<%if @question.t == "a"%>
+								<% qa = @question.a%>
+								<%elsif @question.t == "b"%>
+								<%qa = @question.b%>
+								<%elsif @question.t == "c"%>
+								<%qa = @question.c%>
+								<%elsif @question.t == "d"%>
+								<%qa = @question.d%>
+					<% end %>
+
+
 				<% if r.answer == @question.t %>
 					<% color = "lightgreen" %>
 					<% j+= 1 %>
@@ -40,8 +62,38 @@
 				
 				<tr>
 					<td ><%= @question.question %></td>
-					<td style="background-color:<%= color%>"><%= r.answer %></td>
-					<td><%= @question.t %></td>
+					<td style="background-color:<%= color%>">
+						<% if @question.comman =="yes" %>
+								<%if r.answer == "a"%>
+									<%= image_tag(@question.optiona,:class => 'img-thumbnail') %>
+								<%elsif r.answer == "b"%>
+									<%= image_tag(@question.optionb,:class => 'img-thumbnail') %>
+								<%elsif r.answer == "c"%>
+									<%= image_tag(@question.optionc,:class => 'img-thumbnail') %>
+								<%elsif r.answer == "d"%>
+									<%= image_tag(@question.optiond,:class => 'img-thumbnail') %>
+								<% end %>
+						
+						<% else %>
+							<%= an %>
+						<% end %>
+
+					</td>
+					<td>
+						<% if @question.comman =="yes" %>
+							<%if @question.t == "a"%>
+									<%= image_tag(@question.optiona,:class => 'img-thumbnail') %>
+								<%elsif @question.t == "b"%>
+									<%= image_tag(@question.optionb,:class => 'img-thumbnail') %>
+								<%elsif @question.t == "c"%>
+									<%= image_tag(@question.optionc,:class => 'img-thumbnail') %>
+								<%elsif @question.t == "d"%>
+									<%= image_tag(@question.optiond,:class => 'img-thumbnail') %>
+								<% end %>
+						<% else %>
+							<%= qa %>
+						<% end %>
+					</td>
 				</tr>
 
 				<% if i == ad %>

@@ -12,7 +12,8 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(sign_up_params)
     
-  if verify_recaptcha(model: @user) && @user.valid?
+  # if verify_recaptcha(model: @user) && @user.valid?
+  if @user.valid?
     @user.role = "user"
       @user.save
       flash[:notice] = "Success"

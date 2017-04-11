@@ -26,7 +26,7 @@
     <% if q.qimage? %>
     <div class="row">
     <div class="col-sm-8">
-      <p class="text-center"><%= image_tag(q.qimage) %></p>
+      <p class="text-center"><span class="img-thumbnail"><%= image_tag(q.qimage, :class => 'img-thumbnail') %></span></p>
       </div>
       <div class="col-sm-4">
        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -59,8 +59,15 @@
                  <%= f.hidden_field :pag, :value => @questions.current_page+1 %>
                  <% end %>
                 <%= f.hidden_field :tc, :value => q.tc %>
-               
-               <%= f.input :answer, as: :radio_buttons, :required => true, :label => false, collection: [q.a.html_safe,  q.b.html_safe, q.c.html_safe ,q.d.html_safe], wrapper: :vertical_radio_and_checkboxes %>
+               <% @ad = q.comman %>
+              
+              <% if q.comman == "yes"%>
+              <%= f.input :answer, as: :radio_buttons, :required => true, :label => false, collection: ([[image_tag(q.optiona,:class => 'img-thumbnail'),'a'] , [image_tag(q.optionb,:class => 'img-thumbnail'),'b'], [image_tag(q.optionc,:class => 'img-thumbnail'),'c'], [image_tag(q.optiond,:class => 'img-thumbnail'), 'd']]) %>
+
+              <% else %>
+                  <%= f.input :answer, as: :radio_buttons, :required => true, :label => false, collection: ([[q.a.html_safe,'a'] , [q.b.html_safe,'b'], [q.c.html_safe,'c'], [q.d.html_safe, 'd']]), wrapper: :vertical_radio_and_checkboxes %>
+              <% end %>
+
                 <% disabled = Submitque.where(:userid => current_user, :question => q.id, :subject => @subject) %>
                    <% if disabled.empty? %>
                       <%= f.submit "submit", :class => "btn btn-primary"%>
@@ -73,7 +80,18 @@
            </div>
             <% end %>
            <div class="col-sm-5 text-center">
-           <br>
+           <% if @ad == "yes"%>
+                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- school9edu_main_Blog1_1x1_as -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-7665698555914778"
+                     data-ad-slot="9074553645"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>  
+           <% else %>
                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Responsive Links -->
                     <ins class="adsbygoogle"
@@ -84,6 +102,7 @@
                     <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
+            <% end %>
               </div>
             <div class="col-sm-4 text-center"><br><br><br>
                 <a href="/ecetresults/<%= q.tc %>/<%= @subject %>" > <button class="btn btn-danger">Finshed Exam</button></a>

@@ -26,16 +26,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 gem 'simple_form'
-gem 'bootstrap-sass', '~> 3.3.0'
+# gem 'bootstrap-sass', '~> 3.3.0'
 
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 
-gem 'kaminari'
+# gem 'kaminari'
 gem 'passenger', '~> 5.0', '>= 5.0.30'
 
 gem "recaptcha", require: "recaptcha/rails"
 gem 'carrierwave', '~> 1.0'
+gem "paperclip", "~> 5.0.0"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

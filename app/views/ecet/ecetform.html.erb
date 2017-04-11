@@ -70,7 +70,25 @@
                        <%= f.input :tc, :placeholder => "Test Count", :label => false, :input_html => {:style => "width:100%;", :class => "form-control"} %>
                        </div>
                     </div>
+                    <hr><hr>
+                    <div class="row">
 
+                     <div class="col-sm-2">
+                          <%= f.input :comman, :placeholder => "Images ?", :label => false, :input_html => {:style => "width:100%;", :class => "form-control"} %>
+                      </div>
+                    <div class="col-sm-2">
+                   <%= f.input :optiona, as: :file, :label => false %>
+                   </div>
+                    <div class="col-sm-2">
+                    <%= f.input :optionb, as: :file, :label => false %>
+                    </div>
+                     <div class="col-sm-2">
+                    <%= f.input :optionc, as: :file, :label => false %>
+                    </div>
+                     <div class="col-sm-2">
+                    <%= f.input :optiond, as: :file, :label => false %>
+                    </div>
+                    </div>
                     <div class="text-center">
                      <%= f.submit "submit", :class => "btn btn-primary" %>
                      </div>
