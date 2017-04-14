@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cet: MyString
+  group: MyString
+  tc: MyString
+  status: MyString
+
+two:
+  cet: MyString
+  group: MyString
+  tc: MyString
+  status: MyString

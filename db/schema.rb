@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411053739) do
+ActiveRecord::Schema.define(version: 20170413101412) do
 
   create_table "cets", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -79,6 +79,15 @@ ActiveRecord::Schema.define(version: 20170411053739) do
     t.string   "optiond_content_type", limit: 255
     t.integer  "optiond_file_size",    limit: 4
     t.datetime "optiond_updated_at"
+  end
+
+  create_table "examstates", force: :cascade do |t|
+    t.string   "cet",        limit: 255
+    t.string   "group",      limit: 255
+    t.string   "tc",         limit: 255
+    t.string   "status",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "subjects", force: :cascade do |t|
