@@ -22,13 +22,14 @@
 
 
 					<td ><%= q.question %><br>
+					
 					<% if q.qimage? %>
 						<%= image_tag(q.qimage,:class => 'img-responsive') %>
 					<% end %>
 					</td>
+
 					<td><%= q.subject %></td>
-					<td>
-					</td>
+					
 
 					<td>
 						<%if q.comman == "yes" %>
