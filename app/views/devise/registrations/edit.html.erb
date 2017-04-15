@@ -38,6 +38,18 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname, autocomplete: "off" %>
+  </div>
+  <br />
+
+  <div class="field">
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname, autocomplete: "off" %>
+  </div>
+  <br />
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>

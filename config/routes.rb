@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get '/admin' => 'admin#index'
 
+  get '/questions/:tc/:subject' => 'admin#questions'
+
   # post '/addquestion' => 'quesions#index'
 
   # get '/addquestion' => 'quesions#index'
@@ -35,7 +37,7 @@ Rails.application.routes.draw do
   post '/submitque' => 'exam#submitque'
   get '/submitque' => 'exam#submitque'
 
-  get 'ecetresults/:id/:subject' => 'exam#ecetresults'
+  get 'ecetresults/:tc/:subject' => 'exam#ecetresults'
   # resources :quesions
 
   # resources :exams

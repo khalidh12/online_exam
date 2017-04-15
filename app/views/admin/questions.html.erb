@@ -1,0 +1,82 @@
+<div class="container">
+
+		
+		<table class="table table-bordered">
+		<tr class="text-center">
+			<th class="col-sm-4">Question</th>
+			<th>Option A</th>
+			<th>Option B</th>
+			<th>Option C</th>
+			<th>Option D</th>
+			<th>True Answer</th>
+
+
+		</tr>
+			
+		
+			
+			<% @questions.each do |q| %>
+
+			<tr>
+					<td ><%= q.question %><br>
+					<% if q.qimage? %>
+						<%= image_tag(q.qimage,:class => 'img-responsive') %>
+					<% end %>
+					</td>
+					
+
+					<td>
+						<%if q.comman == "yes" %>
+							<%= image_tag(q.optiona,:class => 'img-responsive') %>
+						<% else %>
+							<%= q.a %>
+						<% end %>
+					</td>
+					
+					<td>
+						<%if q.comman == "yes" %>
+							<%= image_tag(q.optionb,:class => 'img-responsive') %>
+						<% else %>
+							<%= q.a %>
+						<% end %>
+					</td>
+					
+					<td>
+						<%if q.comman == "yes" %>
+							<%= image_tag(q.optionc,:class => 'img-responsive') %>
+						<% else %>
+							<%= q.c %>
+						<% end %>
+					</td>
+					
+					<td>
+						<%if q.comman == "yes" %>
+							<%= image_tag(q.optiond,:class => 'img-responsive') %>
+						<% else %>
+							<%= q.d %>
+						<% end %>
+					</td>
+					
+					
+					<td>
+						<% if q.comman =="yes" %>
+							<%if q.t == "a"%>
+									<%= image_tag(q.optiona,:class => 'img-thumbnail') %>
+								<%elsif q.t == "b"%>
+									<%= image_tag(q.optionb,:class => 'img-thumbnail') %>
+								<%elsif q.t == "c"%>
+									<%= image_tag(q.optionc,:class => 'img-thumbnail') %>
+								<%elsif q.t == "d"%>
+									<%= image_tag(q.optiond,:class => 'img-thumbnail') %>
+								<% end %>
+						<% else %>
+							<%= q.t %>
+						<% end %>
+					</td>
+				</tr>
+
+					
+			<% end %>
+	</table>
+
+</div>
