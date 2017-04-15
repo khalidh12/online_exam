@@ -101,7 +101,7 @@
                     <%= f.hidden_field :cet, :value => "ecet" %>
                      
                      <div class="col-sm-4">
-                         <%= f.input :subject, :required => true, :collection => ['Mathematics','Physics','Chemistry','Civil', 'Electrical & Electronics', 'Mechanical', 'Electronics & Communication', 'Computer Science and Engineering'], :label => false, :input_html => {:style => "width:100%;", :class => "form-control"}, :prompt => "Select Subject" %><br>
+                         <%= f.input :subject, :required => true, :collection => ['Civil', 'Electrical & Electronics', 'Mechanical', 'Electronics & Communication', 'Computer Science and Engineering'], :label => false, :input_html => {:style => "width:100%;", :class => "form-control"}, :prompt => "Select Subject" %><br>
                       </div>
                    <div class="col-sm-4">
                         <%= f.input :tc, :placeholder => "Test Count", :label => false, :input_html => {:style => "width:100%;", :class => "form-control"} %>
