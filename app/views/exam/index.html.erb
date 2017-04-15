@@ -21,7 +21,17 @@
         </div>
 
 <% @questions.each do |q| %>
+<div class="row">
+<div class="col-sm-4">
 <h3 class="text-success"><%= q.subject %></h3>
+</div>
+<div class="col-sm-4">Current Time :<b class="text-danger"> <%= Time.now.strftime('%l:%M %p')%></b></div>
+<div class="col-sm-4">
+<h4 class="text-success text-right">Exam started at &nbsp;&nbsp;&nbsp;
+<!-- <b class="text-info"><%= @time.created_at.strftime('%d %B %Y') %></b> -->
+<b class="text-danger"><%= @time.created_at.strftime('%l:%M %p')%></b></h4>
+</div>
+</div>
   <div class="panel panel-default">
     <div class="panel-body"><p><%= @questions.current_page %>) <%= q.question.html_safe %></p><br>
     <% if q.qimage? %>

@@ -18,21 +18,15 @@ class ExamController < ApplicationController
 
     tc = params[:id]
     
-    comptest = Comptest.where(:tc => tc, :subject => @sub, :comp => "yes")
-    if comptest.blank?
-    # @maths = Ecet.where(:tc => tc, :subject => 'Mathematics' )
-    # @phy = Ecet.where(:tc => tc, :subject => 'Physics' )
-    # @chem = Ecet.where(:tc => tc, :subject => 'Chemistry' )
-    # @s = Ecet.where(:tc => tc, :subject => @sub )
-    # @maths.merge(@phy)
-    # @maths.merge(@chem)
-    # @maths.merge(@s)
+    comptest = Comptest.where(:tc => tc, :subject => @sub, :comp => "yes").last
+
+  if comptest.blank?
     redirect_to "/ecetsubjects", alert: "Please start exam from here."
-    # @kk = @chem+@phy
   else
-    # @kk.each do |k|
-    #   puts k.id
-    # end
+    @time = Testcount.where(:tc => tc, :subject => @sub, :userid => current_user.id).last
+    if @time.blank?
+      @time = Testcount.create(:tc => tc, :subject => @sub, :cet => comptest.cet, :userid => current_user.id, :shortsubject => @subject) 
+    end
     @questions = Ecet.where(:tc => tc, :subject => ['Mathematics', 'Physics', 'Chemistry', @sub]).order("subject = 'Mathematics' desc").order("subject = 'Physics' desc").order("subject = 'Chemistry' desc").order("subject = '#{@sub}' desc").paginate(:page => params[:page], :per_page => 1)
   	# @questions = Ecet.where(:tc => tc).paginate(:page => params[:page], :per_page => 1)
   end
