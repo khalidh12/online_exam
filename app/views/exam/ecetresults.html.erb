@@ -7,23 +7,23 @@
 <% i = 1 %>
 <% j = 0 %>
 <% k = 1%>
-<div class="container-fluid"><br>
+<div class="container-fluid">
 			<div class="row text-center">
 					  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				        <!-- school9edumain_Blog1_1x1_as -->
-				        <ins class="adsbygoogle"
-				             style="display:block"
-				             data-ad-client="ca-pub-7665698555914778"
-				             data-ad-slot="9074553645"
-				             data-ad-format="auto"></ins>
-				        <script>
-				        (adsbygoogle = window.adsbygoogle || []).push({});
-				        </script>
+			              <!-- school9edu_main_Blog1_1x1_as -->
+			              <ins class="adsbygoogle"
+			                   style="display:block"
+			                   data-ad-client="ca-pub-7665698555914778"
+			                   data-ad-slot="9074553645"
+			                   data-ad-format="auto"></ins>
+			              <script>
+			              (adsbygoogle = window.adsbygoogle || []).push({});
+			              </script>
 
 			 </div>
 	<table class="table table-bordered">
 		<tr class="text-center">
-			<th class="col-sm-4">Question</th>
+			<th >Question</th>
 			<th>Option A</th>
 			<th>Option B</th>
 			<th>Option C</th>
@@ -69,55 +69,22 @@
 				<% end %>
 				
 				<tr>
-					<td ><%= k %>) <%= @question.question %><br>
-					<% if @question.qimage? %>
-						<%= image_tag(@question.qimage,:class => 'img-responsive') %>
-					<% end %>
-					</td>
+					<td ><%= k %>) <%= @question.question %></td>
 					<% k+=1%>
-
-					<td>
-						<%if @question.comman == "yes" %>
-							<%= image_tag(@question.optiona,:class => 'img-responsive') %>
-						<% else %>
-							<%= @question.a %>
-						<% end %>
-					</td>
-					
-					<td>
-						<%if @question.comman == "yes" %>
-							<%= image_tag(@question.optionb,:class => 'img-responsive') %>
-						<% else %>
-							<%= @question.a %>
-						<% end %>
-					</td>
-					
-					<td>
-						<%if @question.comman == "yes" %>
-							<%= image_tag(@question.optionc,:class => 'img-responsive') %>
-						<% else %>
-							<%= @question.c %>
-						<% end %>
-					</td>
-					
-					<td>
-						<%if @question.comman == "yes" %>
-							<%= image_tag(@question.optiond,:class => 'img-responsive') %>
-						<% else %>
-							<%= @question.d %>
-						<% end %>
-					</td>
-					
+					<td><%= @question.a %></td>
+					<td><%= @question.b %></td>
+					<td><%= @question.c %></td>
+					<td><%= @question.d %></td>
 					<td style="background-color:<%= color%>">
 						<% if @question.comman =="yes" %>
 								<%if r.answer == "a"%>
-									<%= image_tag(@question.optiona,:class => 'img-responsive') %>
+									<%= image_tag(@question.optiona,:class => 'img-thumbnail') %>
 								<%elsif r.answer == "b"%>
-									<%= image_tag(@question.optionb,:class => 'img-responsive') %>
+									<%= image_tag(@question.optionb,:class => 'img-thumbnail') %>
 								<%elsif r.answer == "c"%>
-									<%= image_tag(@question.optionc,:class => 'img-responsive') %>
+									<%= image_tag(@question.optionc,:class => 'img-thumbnail') %>
 								<%elsif r.answer == "d"%>
-									<%= image_tag(@question.optiond,:class => 'img-responsive') %>
+									<%= image_tag(@question.optiond,:class => 'img-thumbnail') %>
 								<% end %>
 						
 						<% else %>
@@ -145,17 +112,17 @@
 				<% if i == ad %>
 				<% ad+=ad2 %>
 				<tr class="text-center">
-				<td colspan="7">
+				<td colspan="3">
 					 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				        <!-- school9edumain_Blog1_1x1_as -->
-				        <ins class="adsbygoogle"
-				             style="display:block"
-				             data-ad-client="ca-pub-7665698555914778"
-				             data-ad-slot="9074553645"
-				             data-ad-format="auto"></ins>
-				        <script>
-				        (adsbygoogle = window.adsbygoogle || []).push({});
-				        </script>
+						<!-- Responsive Links -->
+						<ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-client="ca-pub-7665698555914778"
+						     data-ad-slot="8409268847"
+						     data-ad-format="link"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
 
                    </td> 
                    
