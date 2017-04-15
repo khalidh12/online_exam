@@ -11,7 +11,7 @@
 			<th>Option D</th>
 			<th>True Answer</th>
 			<th>Comman</th>
-			<th>ID</th>
+			<th>ID</th>	
 
 
 		</tr>
@@ -68,15 +68,7 @@
 					
 					<td>
 						<% if q.comman =="yes" %>
-							<%if q.t == "a"%>
-									<%= image_tag(q.optiona,:class => 'img-thumbnail') %>
-								<%elsif q.t == "b"%>
-									<%= image_tag(q.optionb,:class => 'img-thumbnail') %>
-								<%elsif q.t == "c"%>
-									<%= image_tag(q.optionc,:class => 'img-thumbnail') %>
-								<%elsif q.t == "d"%>
-									<%= image_tag(q.optiond,:class => 'img-thumbnail') %>
-								<% end %>
+							<%= q.t %>
 						<% else %>
 							<%= q.t %>
 						<% end %>
