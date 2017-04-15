@@ -6,50 +6,58 @@
 </style>
 <% i = 1 %>
 <% j = 0 %>
-<div class="container">
+<% k = 1%>
+<div class="container-fluid"><br>
 			<div class="row text-center">
 					  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			              <!-- school9edu_main_Blog1_1x1_as -->
-			              <ins class="adsbygoogle"
-			                   style="display:block"
-			                   data-ad-client="ca-pub-7665698555914778"
-			                   data-ad-slot="9074553645"
-			                   data-ad-format="auto"></ins>
-			              <script>
-			              (adsbygoogle = window.adsbygoogle || []).push({});
-			              </script>
+				        <!-- school9edumain_Blog1_1x1_as -->
+				        <ins class="adsbygoogle"
+				             style="display:block"
+				             data-ad-client="ca-pub-7665698555914778"
+				             data-ad-slot="9074553645"
+				             data-ad-format="auto"></ins>
+				        <script>
+				        (adsbygoogle = window.adsbygoogle || []).push({});
+				        </script>
 
 			 </div>
 	<table class="table table-bordered">
 		<tr class="text-center">
-			<th>Question</th>
+			<th class="col-sm-4">Question</th>
+			<th>Option A</th>
+			<th>Option B</th>
+			<th>Option C</th>
+			<th>Option D</th>
 			<th>Your Answer</th>
 			<th>True Answer</th>
+
+
 		</tr>
-		<% ad=@ecetresults.count/3 %>
-		<% ad2=@ecetresults.count/3 %>
-			<% @ecetresults.each do |r| %>
+			<% ad=@ecetresults.count/3 %>
+			<% ad2=@ecetresults.count/3 %>
+		
+		<% @ecetresults.each do |r| %>
 			
 			<% @question = Ecet.find_by_id(r.question) %>
 
 					<%if r.answer == "a"%>
 						<% an = @question.a%>
-					<%elsif r.answer == "b"%>
+					<%elsif r.answer == "b" %>
 						<% an = @question.b %>
-					<%elsif r.answer == "c"%>
+					<%elsif r.answer == "c" %>
 						<% an = @question.c %>
-					<%elsif r.answer == "d"%>
+					<%elsif r.answer == "d" %>
 						<% an = @question.d%>
 					<% end %>
 
 					<%if @question.t == "a"%>
-								<% qa = @question.a%>
-								<%elsif @question.t == "b"%>
-								<%qa = @question.b%>
-								<%elsif @question.t == "c"%>
-								<%qa = @question.c%>
-								<%elsif @question.t == "d"%>
-								<%qa = @question.d%>
+						<% qa = @question.a%>
+					<%elsif @question.t == "b"%>
+						<%qa = @question.b%>
+					<%elsif @question.t == "c"%>
+						<%qa = @question.c%>
+					<%elsif @question.t == "d"%>
+						<%qa = @question.d%>
 					<% end %>
 
 
@@ -61,17 +69,55 @@
 				<% end %>
 				
 				<tr>
-					<td ><%= @question.question %></td>
+					<td ><%= k %>) <%= @question.question %><br>
+					<% if @question.qimage? %>
+						<%= image_tag(@question.qimage,:class => 'img-responsive') %>
+					<% end %>
+					</td>
+					<% k+=1%>
+
+					<td>
+						<%if @question.comman == "yes" %>
+							<%= image_tag(@question.optiona,:class => 'img-responsive') %>
+						<% else %>
+							<%= @question.a %>
+						<% end %>
+					</td>
+					
+					<td>
+						<%if @question.comman == "yes" %>
+							<%= image_tag(@question.optionb,:class => 'img-responsive') %>
+						<% else %>
+							<%= @question.a %>
+						<% end %>
+					</td>
+					
+					<td>
+						<%if @question.comman == "yes" %>
+							<%= image_tag(@question.optionc,:class => 'img-responsive') %>
+						<% else %>
+							<%= @question.c %>
+						<% end %>
+					</td>
+					
+					<td>
+						<%if @question.comman == "yes" %>
+							<%= image_tag(@question.optiond,:class => 'img-responsive') %>
+						<% else %>
+							<%= @question.d %>
+						<% end %>
+					</td>
+					
 					<td style="background-color:<%= color%>">
 						<% if @question.comman =="yes" %>
 								<%if r.answer == "a"%>
-									<%= image_tag(@question.optiona,:class => 'img-thumbnail') %>
+									<%= image_tag(@question.optiona,:class => 'img-responsive') %>
 								<%elsif r.answer == "b"%>
-									<%= image_tag(@question.optionb,:class => 'img-thumbnail') %>
+									<%= image_tag(@question.optionb,:class => 'img-responsive') %>
 								<%elsif r.answer == "c"%>
-									<%= image_tag(@question.optionc,:class => 'img-thumbnail') %>
+									<%= image_tag(@question.optionc,:class => 'img-responsive') %>
 								<%elsif r.answer == "d"%>
-									<%= image_tag(@question.optiond,:class => 'img-thumbnail') %>
+									<%= image_tag(@question.optiond,:class => 'img-responsive') %>
 								<% end %>
 						
 						<% else %>
@@ -99,17 +145,17 @@
 				<% if i == ad %>
 				<% ad+=ad2 %>
 				<tr class="text-center">
-				<td colspan="3">
+				<td colspan="7">
 					 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- Responsive Links -->
-						<ins class="adsbygoogle"
-						     style="display:block"
-						     data-ad-client="ca-pub-7665698555914778"
-						     data-ad-slot="8409268847"
-						     data-ad-format="link"></ins>
-						<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-						</script>
+				        <!-- school9edumain_Blog1_1x1_as -->
+				        <ins class="adsbygoogle"
+				             style="display:block"
+				             data-ad-client="ca-pub-7665698555914778"
+				             data-ad-slot="9074553645"
+				             data-ad-format="auto"></ins>
+				        <script>
+				        (adsbygoogle = window.adsbygoogle || []).push({});
+				        </script>
 
                    </td> 
                    

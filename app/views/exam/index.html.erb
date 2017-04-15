@@ -21,8 +21,9 @@
         </div>
 
 <% @questions.each do |q| %>
+<h3 class="text-success"><%= q.subject %></h3>
   <div class="panel panel-default">
-    <div class="panel-body"><p><%= q.question.html_safe %></p><br>
+    <div class="panel-body"><p><%= @questions.current_page %>) <%= q.question.html_safe %></p><br>
     <% if q.qimage? %>
     <div class="row">
     <div class="col-sm-8">
