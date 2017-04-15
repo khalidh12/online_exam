@@ -11,5 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
-/system/*
+/public/system/*
 /uploads/*
