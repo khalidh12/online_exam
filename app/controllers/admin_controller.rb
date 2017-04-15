@@ -30,10 +30,10 @@ class AdminController < ApplicationController
       @sub = params[:subject]
     end
 
-		@questions = Ecet.where(:tc => params[:tc], :subject => ['Mathematics', 'Physics', 'Chemistry', @sub])
+		@questions = Ecet.where(:tc => params[:tc], :subject => ['Mathematics', 'Physics', 'Chemistry', @sub]).order("subject = 'Mathematics' desc").order("subject = 'Physics' desc").order("subject = 'Chemistry' desc").order("subject = '#{@sub}' desc")
 	else
 		redirect_to "/"
 	end
-	
+
 	end
 end
