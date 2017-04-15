@@ -1,5 +1,5 @@
 <div class="container">
-
+<% i =1 %>
 		
 		<table class="table table-bordered">
 		<tr class="text-center">
@@ -21,7 +21,7 @@
 			<tr>
 
 
-					<td ><%= q.question %><br>
+					<td ><%= i  %>) <%= q.question %><br>
 					
 					<% if q.qimage? %>
 						<%= image_tag(q.qimage,:class => 'img-responsive') %>
@@ -81,7 +81,8 @@
 					</td>
 				</tr>
 
-					
+				<% i+=1 %>
+	
 			<% end %>
 	</table>
 
