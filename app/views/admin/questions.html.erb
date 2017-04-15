@@ -4,6 +4,7 @@
 		<table class="table table-bordered">
 		<tr class="text-center">
 			<th class="col-sm-4">Question</th>
+			<th>Subject</th>
 			<th>Option A</th>
 			<th>Option B</th>
 			<th>Option C</th>
@@ -18,12 +19,16 @@
 			<% @questions.each do |q| %>
 
 			<tr>
+
+				<td>q.subject</td>
 					<td ><%= q.question %><br>
 					<% if q.qimage? %>
 						<%= image_tag(q.qimage,:class => 'img-responsive') %>
 					<% end %>
 					</td>
 					
+					<td>
+					</td>
 
 					<td>
 						<%if q.comman == "yes" %>
