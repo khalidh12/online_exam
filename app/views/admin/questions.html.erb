@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 <% i =1 %>
 		
 		<table class="table table-bordered">
@@ -23,7 +23,7 @@
 			<tr>
 
 
-					<td ><%= i  %>) <%= q.question %><br>
+					<td class="col-sm-4"><%= i  %>) <%= q.question %><br>
 					
 					<% if q.qimage? %>
 						<%= image_tag(q.qimage,:class => 'img-responsive') %>
