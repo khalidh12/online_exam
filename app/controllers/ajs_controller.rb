@@ -24,5 +24,5 @@ class AjsController < ApplicationController
   		
   # 		end
   # 	end
-  # end
+  end
 end
