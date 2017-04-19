@@ -33,7 +33,7 @@
 
 <% if @comptest.empty? %>
 	<div class="alert alert-danger">
-      <strong>No Tests Added Yet</strong>
+      <strong>Sorry! No tests added yet</strong>
     </div>
 		
 <% else %>
@@ -51,9 +51,9 @@
 
 		<% @comptest.each do |c| %>
 			<tr>
-				<td>Exam-<%= i %></td>
-				<td><%= c.created_at %></td>
-				<td><a href="/exam/<%= c.tc %>/<%= @subject %>" >Start Exam </a></td>
+				<td><%= c.subject %> Mock test - <%= i %></td>
+				<td><%= c.created_at.strftime('%d-%m-%Y %T') %></td>
+				<td><a href="/exam/<%= c.tc %>/<%= @subject %>" ><button class="btn btn-success">Start Exam </button></a></td>
 			
 			</tr>
 			<% if i == ad %>
