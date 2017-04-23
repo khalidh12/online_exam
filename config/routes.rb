@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'subscribe/index'
+
   get 'results/index'
 
   get '/ajs' => 'ajs#index'
@@ -38,6 +40,9 @@ Rails.application.routes.draw do
   get '/submitque' => 'exam#submitque'
 
   get 'ecetresults/:id/:subject' => 'exam#ecetresults'
+
+  get '/ap-apsbtet-results' => 'subscribe#index'
+  post '/subscribed' => 'subscribe#subscribed'
   # resources :quesions
 
   # resources :exams

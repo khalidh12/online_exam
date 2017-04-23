@@ -33,9 +33,49 @@
         <!-- Current Time :<b class="text-danger"> <%= Time.now.strftime('%l:%M %p')%></b> -->
       </div>
       <div class="col-sm-4">
-      <h4 class="text-success text-right">Exam started at &nbsp;&nbsp;&nbsp;
-      <!-- <b class="text-info"><%= @time.created_at.strftime('%d %B %Y') %></b> -->
-      <b class="text-danger"><%= @time.created_at.strftime('%l:%M %p')%></b></h4>
+      <h4 class="text-success text-right">Exam started at &nbsp;&nbsp;&nbsp;<i class="fa fa-hourglass" aria-hidden="true" title="3 hours exam"></i>
+
+   <% @t= @time.created_at + 3*60*60 %>
+
+      <b class="text-danger"><%= @time.created_at.strftime('%l:%M %p')%></b>
+      <br><br>
+      <b class="text-danger text-right"><p id="demo"></p></b>
+      </h4>
+
+      <!-- <p id="demo"></p> -->
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("<%= @t.strftime("%B")%> <%=  @t.strftime("%d") %>, <%=  @t.strftime("%Y") %> <%= @t.strftime('%H:%M:%S')%>").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML =  hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "3 hours completed";
+    }
+}, 1000);
+</script>
+
+
       </div>
 </div>
   <div class="panel panel-default">
