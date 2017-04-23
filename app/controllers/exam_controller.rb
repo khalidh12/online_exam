@@ -70,7 +70,7 @@ class ExamController < ApplicationController
   def ecetresults
     tc = params[:id]
     subject = params[:subject]
-    @ecetresults = Submitque.where(:tc => tc, :subject => ['Mathematics', 'Physics', 'Chemistry', subject]).order("subject = 'Mathematics' desc").order("subject = 'Physics' desc").order("subject = 'Chemistry' desc").order("subject = '#{@sub}' desc").paginate(:page => params[:page], :per_page => 10)
+    @ecetresults = Submitque.where(:tc => tc, :userid => current_user.id, :subject => ['Mathematics', 'Physics', 'Chemistry', subject]).order("subject = 'Mathematics' desc").order("subject = 'Physics' desc").order("subject = 'Chemistry' desc").order("subject = '#{@sub}' desc").paginate(:page => params[:page], :per_page => 10)
     # @questions = Ecet.where(:tc => tc, :subject => ['Mathematics', 'Physics', 'Chemistry', params[:subject]])
   end
 
