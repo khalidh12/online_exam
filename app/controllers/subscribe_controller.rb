@@ -1,5 +1,5 @@
 class SubscribeController < ApplicationController
-  def index
+  def apsubscribe
   	@subscribe = Subscribe.new
   end
 

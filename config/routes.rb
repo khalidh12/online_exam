@@ -41,7 +41,7 @@ Rails.application.routes.draw do
 
   get 'ecetresults/:id/:subject' => 'exam#ecetresults'
 
-  get '/ap-apsbtet-results' => 'subscribe#index'
+  get '/ap-apsbtet-results' => 'subscribe#apsubscribe'
   get '/ts-tssbtet-results' => 'subscribe#tssubscribe'
 
   post '/subscribed' => 'subscribe#subscribed'
