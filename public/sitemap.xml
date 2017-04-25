@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>http://www.neetgov.in/users/sign_in</loc>
+</url>
+<url>
+  <loc>http://www.neetgov.in/users/sign_up</loc>
+</url>
+<url>
+  <loc>http://www.neetgov.in/users/password/new</loc>
+</url>
+<url>
+  <loc>http://www.neetgov.in/users/confirmation/new</loc>
+</url>
+<url>
+  <loc>http://www.neetgov.in/ap-apsbtet-results</loc>
+</url>
+<url>
+  <loc>http://www.neetgov.in/ts-tssbtet-results</loc>
+</url>
+<url>
+  <loc>http://www.neetgov.in/ecetsubjects</loc>
+</url>
+<url>
+  <loc>http://www.neetgov.in/ecet/cse</loc>
+</url>
+<url>
+  <loc>http://www.neetgov.in/ecet/ece</loc>
+</url>
+<url>
+  <loc>http://www.neetgov.in/ecet/eee</loc>
+</url>
+<url>
+  <loc>http://www.neetgov.in/ecet/mechanical</loc>
+</url>
+<url>
+  <loc>http://www.neetgov.in/ecet/civil</loc>
+</url>
+</urlset>

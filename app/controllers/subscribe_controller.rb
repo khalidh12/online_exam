@@ -18,6 +18,7 @@ class SubscribeController < ApplicationController
   	@subscribe = Subscribe.new
   end
 
+
   private
   	def subscribe_params
   		params.require(:subscribe).permit(:name, :email, :pin, :mobile,:state)

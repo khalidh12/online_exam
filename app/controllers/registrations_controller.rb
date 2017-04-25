@@ -17,7 +17,7 @@ class RegistrationsController < Devise::RegistrationsController
     @user.role = "user"
       @user.save
       flash[:notice] = "Success"
-      redirect_to login_url, :notice => "email sent to #{@user.email}, please Verify Your email "
+      redirect_to login_url, :notice => "email sent to <span class='text-danger'><b> <strong>#{@user.email}</strong></b></span>, please Verify Your email "
       # redirect_to emailnotification_url(@user), status: :found
       # redirect_to :controller => 'emailnotification'
     else

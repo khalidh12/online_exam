@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   get '/ts-tssbtet-results' => 'subscribe#tssubscribe'
 
   post '/subscribed' => 'subscribe#subscribed'
+
+
   # resources :quesions
 
   # resources :exams
