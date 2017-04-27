@@ -85,7 +85,7 @@ var x = setInterval(function() {
     <% if q.qimage? %>
     <div class="row">
     <div class="col-sm-8">
-      <p class="text-center"><span class="img-thumbnail"><%= image_tag(q.qimage, :class => 'img-thumbnail', alt: "neet") %></span></p>
+      <p class="text-center"><span class="img-thumbnail"><%= image_tag(q.qimage, :class => 'img-thumbnail', alt: "sbtet, neet") %></span></p>
       </div>
       <div class="col-sm-4"></div>
     </div>
@@ -111,7 +111,7 @@ var x = setInterval(function() {
                <% @ad = q.comman %>
               
               <% if q.comman == "yes"%>
-              <%= f.input :answer, as: :radio_buttons, :required => true, :label => false, collection: ([[image_tag(q.optiona,:class => 'img-thumbnail', alt: "neet"),'a'] , [image_tag(q.optionb,:class => 'img-thumbnail', alt: "neet"),'b'], [image_tag(q.optionc,:class => 'img-thumbnail', alt: "neet"),'c'], [image_tag(q.optiond,:class => 'img-thumbnail', alt: "neet"), 'd']]) %>
+              <%= f.input :answer, as: :radio_buttons, :required => true, :label => false, collection: ([[image_tag(q.optiona,:class => 'img-thumbnail', alt: "sbtet, neet"),'a'] , [image_tag(q.optionb,:class => 'img-thumbnail', alt: "sbtet, neet"),'b'], [image_tag(q.optionc,:class => 'img-thumbnail', alt: "sbtet, neet"),'c'], [image_tag(q.optiond,:class => 'img-thumbnail', alt: "sbtet, neet"), 'd']]) %>
 
               <% else %>
                   <%= f.input :answer, as: :radio_buttons, :required => true, :label => false, collection: ([[q.a.html_safe,'a'] , [q.b.html_safe,'b'], [q.c.html_safe,'c'], [q.d.html_safe, 'd']]), wrapper: :vertical_radio_and_checkboxes %>
