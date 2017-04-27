@@ -86,6 +86,19 @@ class EcetController < ApplicationController
   def subjects
   end
 
+  def restart
+    puts "********************"
+    puts params[:tc]
+    puts params[:subject]
+    restart = Submitque.where(:userid => current_user.id, :tc => params[:tc], :subject => params[:subject])
+    restart.delete_all
+
+    testdelete = Testcount.where(:userid => current_user.id, :tc => params[:tc], :shortsubject => params[:subject])
+    testdelete.delete_all
+
+    redirect_to "/ecet/#{params[:subject]}", notice: 'Please Click Start exam'
+  end
+
   private
 
    def ecet_params

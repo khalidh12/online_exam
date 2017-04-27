@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   post '/ecetcompleted' => 'ecet#ecetcompleted'
 
+   get '/restart/:tc/:subject' => 'ecet#restart'
+
   get 'home/index'
 
   get '/addtests' => 'addtests#index'
@@ -51,6 +53,10 @@ Rails.application.routes.draw do
 
   # resources :exams
   # resources :submitques
+
+  get '/ecettips' => 'blogs#ecettips'
+
+  get '/ecet-tips-civil' => 'blogs#ecettipscivil'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
