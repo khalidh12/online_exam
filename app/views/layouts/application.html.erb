@@ -46,7 +46,12 @@
 
   
 </head>
+
+<% if request.original_fullpath == "/ecet-syllabus-weightage-marks-tips" %>
+<body class="gray-bg  pace-done" oncontextmenu="return false" >
+<% else %>
 <body class="gray-bg  pace-done">
+<% end %>
 
 <% if user_signed_in? %>
 <%= render :partial => 'layouts/navbar' %>
