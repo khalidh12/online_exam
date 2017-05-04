@@ -3,4 +3,6 @@ class BlogsController < ApplicationController
   end
   def ecettipscivil
   end
+  def question_paper
+  end
 end
