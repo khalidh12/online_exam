@@ -5,4 +5,6 @@ class BlogsController < ApplicationController
   end
   def question_paper
   end
+  def ap_eamcet_results
+  end
 end
