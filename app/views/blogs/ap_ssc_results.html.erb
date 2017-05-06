@@ -9,8 +9,8 @@
 <br>
 <script>
 function myFunction() {
-
-    alert("Server too Busy,Plaese Try Again");
+    document.getElementById('demo').innerHTML="Loading Please wait.."
+    alert("Try Again, Results not yet published");
     location.reload(); 
 }
 </script>
@@ -53,6 +53,7 @@ function myFunction() {
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-info" onclick="myFunction()">Submit</button></div>
+               <span class="text-danger"><span id="demo"></span>  </span>   
 <script async sr="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- school9edu_main_Blog1_1x1_as -->
                     <ins class="adsbygoogle"
