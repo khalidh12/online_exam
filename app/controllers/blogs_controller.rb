@@ -10,4 +10,7 @@ class BlogsController < ApplicationController
 
   def ts_polycet_results
   end
+
+  def ap_ssc_results
+  end
 end
