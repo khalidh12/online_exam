@@ -54,6 +54,8 @@ Rails.application.routes.draw do
   # resources :exams
   # resources :submitques
 
+
+  get '/adminmain' => 'blogs#adminmain'
    get '/ecet-syllabus-weightage-marks-tips' => 'blogs#ecettips'
 
   get '/ecet-tips-civil' => 'blogs#ecettipscivil'

@@ -4,13 +4,13 @@ class AdminController < ApplicationController
 
   def index
   	if current_user.role == "admin"
-  	users = User.all
-  	@users = users.count
-  	comptests = Comptest.all
-  	@comptests = comptests.count
+    	users = User.all
+    	@users = users.count
+    	comptests = Comptest.all
+    	@comptests = comptests.count
   	else
-		redirect_to "/"
-	end
+  		redirect_to "/"
+  	end
   end
 
 

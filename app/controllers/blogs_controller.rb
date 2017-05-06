@@ -13,4 +13,8 @@ class BlogsController < ApplicationController
 
   def ap_ssc_results
   end
+
+  def adminmain
+  end
+
 end
