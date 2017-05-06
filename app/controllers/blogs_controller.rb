@@ -7,4 +7,7 @@ class BlogsController < ApplicationController
   end
   def ap_eamcet_results
   end
+
+  def ts_polycet_results
+  end
 end

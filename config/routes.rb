@@ -61,6 +61,7 @@ Rails.application.routes.draw do
   get '/ecet-question-papers-keys' => 'blogs#question_paper'
 
   get '/ap-eamcet-results-2017' => 'blogs#ap_eamcet_results'
+  get '/ts-polycet-results-2017' => 'blogs#ts_polycet_results'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
