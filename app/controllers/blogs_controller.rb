@@ -14,6 +14,9 @@ class BlogsController < ApplicationController
   def ap_ssc_results
   end
 
+  def ap_polycet_results
+  end
+
   def adminmain
   end
 
