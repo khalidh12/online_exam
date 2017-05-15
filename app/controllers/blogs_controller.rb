@@ -20,4 +20,7 @@ class BlogsController < ApplicationController
   def adminmain
   end
 
+  def ap_ecet_results
+  end
+
 end
