@@ -23,4 +23,7 @@ class BlogsController < ApplicationController
   def ap_ecet_results
   end
 
+  def ts_ecet_results
+  end
+
 end
