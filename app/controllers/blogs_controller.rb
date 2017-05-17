@@ -29,4 +29,7 @@ class BlogsController < ApplicationController
   def cbse
   end
 
+  def tnsslc
+  end
+
 end
