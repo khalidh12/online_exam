@@ -17,12 +17,12 @@ input[type=text] {
 <script>
 var myVar;
 function myFunction() {
-    document.getElementById('demo').innerHTML="RESULTS AVAILABLE SOON"
-    window.open("http://ecet.tsche.ac.in/RankCard/DownloadRankCard.aspx");
-    // myVar=setInterval(time, 3000);
-    // function time(){
-    //     location.reload()
-    // }
+    document.getElementById('demo').innerHTML="RESULTS AVAILABLE ON 9:30"
+    // window.open("http://ecet.tsche.ac.in/RankCard/DownloadRankCard.aspx");
+    myVar=setInterval(time, 3000);
+    function time(){
+        location.reload()
+    }
     
 }
 </script>
