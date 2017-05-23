@@ -32,4 +32,8 @@ class BlogsController < ApplicationController
   def tnsslc
   end
 
+  def ts_sbtet
+  end
+  
+
 end
