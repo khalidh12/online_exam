@@ -43,8 +43,8 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'gmail.com',
-    user_name:            'riseyuvaservices@gmail.com',
-    password:             'aslamsaleem',
+    user_name:            'test@gmail.com',
+    password:             'test',
     authentication:       'plain',
     enable_starttls_auto: true  }
   # Adds additional error checking when serving assets at runtime.
