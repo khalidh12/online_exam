@@ -36,7 +36,7 @@ gem 'will_paginate-bootstrap'
 gem 'passenger', '~> 5.0', '>= 5.0.30'
 
 gem "recaptcha", require: "recaptcha/rails"
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem "paperclip", "~> 5.0.0"
 
 # Use ActiveModel has_secure_password
